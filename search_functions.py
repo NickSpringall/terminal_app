@@ -3,6 +3,7 @@ import xml.etree.ElementTree as ET
 tree = ET.parse('product_database.xml')
 root = tree.getroot()
 
+
 def disp_category():
     cat_list = []
     for item in root:
@@ -23,12 +24,7 @@ def disp_category():
                 prod_num_list.append(item.attrib)
             else:
                 continue
-    print(prod_num_list)
-
-                
-            
-            # print out all data for items which have 
-
+    return (prod_num_list)
 
 
 def disp_keyword():
@@ -42,8 +38,10 @@ def disp_full():
 def prod_search():
     search_term = input ("Would you like to search by Catergory, Keyword or full list? (Type Catergory, Keyword or Full): ")
     if search_term.lower() == "category":
-        disp_category()
+        prod_num_list = disp_category()
     if search_term.lower == "keyword":
         disp_keyword()
     if search_term.lower == "full":
         disp_full()
+
+    return (prod_num_list)
