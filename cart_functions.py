@@ -63,6 +63,11 @@ def add_to_cart():
                             price = sub.text
                         elif sub.tag == "weight":
                             weight = sub.text
+        
+    print (name)
+    print (category)
+    print (price)
+    print (weight)
 
 
 
