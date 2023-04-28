@@ -3,10 +3,12 @@ import xml.etree.ElementTree as ET
 tree = ET.parse('product_database.xml')
 root = tree.getroot()
 
+from tools import word_check
 
+
+prod_num_list = []
 
 def disp_category():
-    # prod_num_list = []
     cat_list = []
     for item in root:
         for x in item.findall('category'):
@@ -29,16 +31,16 @@ def disp_category():
 
 
 def disp_keyword():
-     
-    user_keyword = ("Type a keyword to search: ")
-
+    user_keyword = input("please type in a keyword to search: ")
     for item in root:
-        for x in item.findall('keyword'):
-            if x.text == user_keyword:
+        for x in item.findall('keywords'):
+            if word_check(x.text, user_keyword) is True:
+                print("true")
                 prod_num_list.append(item.attrib)
-        return (prod_num_list)    
+            continue
+    print (prod_num_list)
+    return (prod_num_list) 
 
-prod_num_list = []
 
 def disp_full():
     for item in root:
