@@ -29,28 +29,19 @@ def add_to_cart():
     selection = input("Please type the name of the product you would like to order: ")
     quantity = int(input("how many would you like to order? "))
 
-    file_check = os.path.isfile("/Users/nickspringall/Desktop/Coder lessons/terminal_app/current_order.xml")
+    file_check = os.path.isfile("/Users/nickspringall/Desktop/Coder lessons/terminal_app/user_cart.xml")
+    print(file_check)
     if file_check is False:
         root = minidom.Document()
         xml = root.createElement('user_cart')
         root.appendChild(xml)
-
-        # customer = root.createElement('customer')
-        # xml.appendChild(customer)
-        # items = root.createElement('customer')
-        # xml.appendChild(items)
-        
-        # products = root.createElement('products')
-        # xml.appendChild(customer)
-        # items = root.createElement('products')
-        # xml.appendChild(items)
 
         xml_str = root.toprettyxml(indent ="\t")
         save_path_file = "user_cart.xml"
 
         with open(save_path_file, "w") as f:
             f.write(xml_str)
-    
+        
     selection_to_cart = {
         "quantity": quantity,
         "prod_code": "",
@@ -74,11 +65,16 @@ def add_to_cart():
                         elif sub.tag == "weight":
                             selection_to_cart["weight"] = sub.text
 
-    print (selection_to_cart)
+    # print (selection_to_cart)
     
-    # create items sub tag in user_cart if not already there then copy over product info
+    # create items sub tag in user_cart then copy over product info
     tree_cart = ET.parse("user_cart.xml")
     root_cart = tree_cart.getroot()
+
+    # check it items element already exists
+    # root_cart.get([items])
+    # print(items)
+    
 
     items = ET.Element("items")
     root_cart.append(items) 
@@ -87,7 +83,7 @@ def add_to_cart():
     cart_item = ET.SubElement(items, "item")
     root_cart.append(cart_item)
     ET.indent (tree_cart, space = '\t')
-    tree_cart.write("user_cart.xml")
+    # tree_cart.write("user_cart.xml")
 
     for i, (k, v) in enumerate(selection_to_cart.items()):
         prod_text = str(v)
@@ -99,13 +95,11 @@ def add_to_cart():
         ET.indent (tree_cart, space = '\t')
         tree_cart.write("user_cart.xml")    
         
+        
 
 
 
             
-
-
-
 
 
 

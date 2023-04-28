@@ -5,10 +5,8 @@ from xml.dom import minidom
 import os
 import pprint
 
-from search_functions import prod_search, disp_category, disp_keyword
+from search_functions import prod_search, disp_full, disp_category, disp_keyword 
 from cart_functions import selection, add_to_cart
-# from test import add_to_cart
-
 
 
 category_list = selection(prod_search())

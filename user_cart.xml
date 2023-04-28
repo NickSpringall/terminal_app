@@ -1,7 +1,7 @@
 <user_cart>
 	<items>
 		<item>
-			<quantity>2</quantity>
+			<quantity>10</quantity>
 			<prod_code>{'number': '12038'}</prod_code>
 			<name>Product 2</name>
 			<category>tables</category>
@@ -10,17 +10,41 @@
 		</item>
 	</items>
 	<item>
-		<quantity>2</quantity>
+		<quantity>10</quantity>
 		<prod_code>{'number': '12038'}</prod_code>
 		<name>Product 2</name>
 		<category>tables</category>
 		<price>$47.40</price>
 		<weight>8kg</weight>
 	</item>
+	<quantity>10</quantity>
+	<prod_code>{'number': '12038'}</prod_code>
+	<name>Product 2</name>
+	<category>tables</category>
+	<price>$47.40</price>
+	<weight>8kg</weight>
+	<items>
+		<item>
 		<quantity>2</quantity>
-		<prod_code>{'number': '12038'}</prod_code>
-		<name>Product 2</name>
-		<category>tables</category>
-		<price>$47.40</price>
-		<weight>8kg</weight>
+	<prod_code />
+	<name />
+	<category />
+	<price />
+	<weight />
+</item>
+	</items>
+	<item>
+		<quantity>2</quantity>
+	<prod_code />
+	<name />
+	<category />
+	<price />
+	<weight />
+</item>
+	<quantity>2</quantity>
+	<prod_code />
+	<name />
+	<category />
+	<price />
+	<weight />
 </user_cart>

@@ -4,7 +4,9 @@ tree = ET.parse('product_database.xml')
 root = tree.getroot()
 
 
+
 def disp_category():
+    # prod_num_list = []
     cat_list = []
     for item in root:
         for x in item.findall('category'):
@@ -12,11 +14,10 @@ def disp_category():
                 cat_list.append(x.text)
             else:
                 continue
+
     print ("Please select from the following categories")
     print (cat_list)
     cat_choice = input ("Choice: ")
-
-    prod_num_list = []
 
     for item in root:
         for x in item.findall('category'):
@@ -28,20 +29,35 @@ def disp_category():
 
 
 def disp_keyword():
-    pass
+     
+    user_keyword = ("Type a keyword to search: ")
+
+    for item in root:
+        for x in item.findall('keyword'):
+            if x.text == user_keyword:
+                prod_num_list.append(item.attrib)
+        return (prod_num_list)    
+
+prod_num_list = []
 
 def disp_full():
-    pass
+    for item in root:
+        prod_num_list.append(item.attrib)
 
+    return (prod_num_list)
 
 
 def prod_search():
     search_term = input ("Would you like to search by Catergory, Keyword or full list? (Type Catergory, Keyword or Full): ")
+    
     if search_term.lower() == "category":
         prod_num_list = disp_category()
-    if search_term.lower == "keyword":
-        disp_keyword()
-    if search_term.lower == "full":
-        disp_full()
+        
+    if search_term.lower() == "keyword":
+        prod_num_list = disp_keyword()
 
+    if search_term.lower() == "full":
+        prod_num_list = disp_full()
+        print (prod_num_list)
+    
     return (prod_num_list)
