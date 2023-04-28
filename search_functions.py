@@ -37,7 +37,6 @@ def disp_keyword():
             if word_check(x.text, user_keyword) is True:
                 prod_num_list.append(item.attrib)
             continue
-    print (prod_num_list)
     return (prod_num_list) 
 
 
@@ -59,6 +58,6 @@ def prod_search():
 
     if search_term.lower() == "full":
         prod_num_list = disp_full()
-        print (prod_num_list)
+
     
     return (prod_num_list)
