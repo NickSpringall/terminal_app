@@ -31,9 +31,6 @@ def product_disp(list):
                         continue
     
                 ls_items_dict.append(item_dict)
-                
-    
-    pprint.pprint (ls_items_dict)
     return ls_items_dict
 
 

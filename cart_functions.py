@@ -11,6 +11,8 @@ from tools import file_check
 
 def add_to_cart():
     selection = input("Please type the name of the product you would like to order: ")
+    
+    # write function that lets user know how many left in stock and prevents them entering more
     quantity = int(input("how many would you like to order? "))
 
     
