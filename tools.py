@@ -5,6 +5,3 @@ def word_check(str, keyword):
         return True
     else:
         return False
-
-
-

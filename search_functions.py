@@ -35,7 +35,6 @@ def disp_keyword():
     for item in root:
         for x in item.findall('keywords'):
             if word_check(x.text, user_keyword) is True:
-                print("true")
                 prod_num_list.append(item.attrib)
             continue
     print (prod_num_list)

@@ -25,26 +25,50 @@
 	<weight>8kg</weight>
 	<items>
 		<item>
-		<quantity>2</quantity>
-	<prod_code />
-	<name />
-	<category />
-	<price />
-	<weight />
-</item>
+			<quantity>2</quantity>
+			<prod_code />
+			<name />
+			<category />
+			<price />
+			<weight />
+		</item>
 	</items>
 	<item>
 		<quantity>2</quantity>
-	<prod_code />
-	<name />
-	<category />
-	<price />
-	<weight />
-</item>
+		<prod_code />
+		<name />
+		<category />
+		<price />
+		<weight />
+	</item>
 	<quantity>2</quantity>
 	<prod_code />
 	<name />
 	<category />
 	<price />
 	<weight />
+	<items>
+		<item>
+		<quantity>4</quantity>
+	<prod_code>{'number': '11002'}</prod_code>
+	<name>Product 4</name>
+	<category>chairs</category>
+	<price>$26.40</price>
+	<weight>20kg</weight>
+</item>
+	</items>
+	<item>
+		<quantity>4</quantity>
+	<prod_code>{'number': '11002'}</prod_code>
+	<name>Product 4</name>
+	<category>chairs</category>
+	<price>$26.40</price>
+	<weight>20kg</weight>
+</item>
+	<quantity>4</quantity>
+	<prod_code>{'number': '11002'}</prod_code>
+	<name>Product 4</name>
+	<category>chairs</category>
+	<price>$26.40</price>
+	<weight>20kg</weight>
 </user_cart>
