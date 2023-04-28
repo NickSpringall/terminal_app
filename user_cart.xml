@@ -1,0 +1,26 @@
+<user_cart>
+	<items>
+		<item>
+			<quantity>2</quantity>
+			<prod_code>{'number': '12038'}</prod_code>
+			<name>Product 2</name>
+			<category>tables</category>
+			<price>$47.40</price>
+			<weight>8kg</weight>
+		</item>
+	</items>
+	<item>
+		<quantity>2</quantity>
+		<prod_code>{'number': '12038'}</prod_code>
+		<name>Product 2</name>
+		<category>tables</category>
+		<price>$47.40</price>
+		<weight>8kg</weight>
+	</item>
+		<quantity>2</quantity>
+		<prod_code>{'number': '12038'}</prod_code>
+		<name>Product 2</name>
+		<category>tables</category>
+		<price>$47.40</price>
+		<weight>8kg</weight>
+</user_cart>

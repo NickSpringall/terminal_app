@@ -35,11 +35,16 @@ def add_to_cart():
         xml = root.createElement('user_cart')
         root.appendChild(xml)
 
-        customer = root.createElement('customer')
-        xml.appendChild(customer)
-        items = root.createElement('customer')
-        xml.appendChild(items)
+        # customer = root.createElement('customer')
+        # xml.appendChild(customer)
+        # items = root.createElement('customer')
+        # xml.appendChild(items)
         
+        # products = root.createElement('products')
+        # xml.appendChild(customer)
+        # items = root.createElement('products')
+        # xml.appendChild(items)
+
         xml_str = root.toprettyxml(indent ="\t")
         save_path_file = "user_cart.xml"
 
@@ -47,14 +52,21 @@ def add_to_cart():
             f.write(xml_str)
     
     selection_to_cart = {
-        "quantity": quantity
-    }
-
+        "quantity": quantity,
+        "prod_code": "",
+        "name": "",
+        "category": "",
+        "price": "",
+        "weight": ""
+        }
+    
+# adding product details to dictionary from product_database.xml
     for item in list_root:
             if item[0].text.lower() == selection.lower():
                 for sub in item:
                         if sub.tag == "name":
                             selection_to_cart["name"] = sub.text
+                            selection_to_cart["prod_code"] = item.attrib
                         elif sub.tag == "category":
                             selection_to_cart["category"] = sub.text
                         elif sub.tag == "price":
@@ -64,51 +76,36 @@ def add_to_cart():
 
     print (selection_to_cart)
     
+    # create items sub tag in user_cart if not already there then copy over product info
     tree_cart = ET.parse("user_cart.xml")
     root_cart = tree_cart.getroot()
-    print(ET.tostring(root_cart))
 
-    new_product = ET.Element("name")
-    new_product.text = "hello"
-    root_cart.append(new_product)
-    print(new_product, new_product.text)
+    items = ET.Element("items")
+    root_cart.append(items) 
+    ET.indent (tree_cart, space = '\t')
 
+    cart_item = ET.SubElement(items, "item")
+    root_cart.append(cart_item)
+    ET.indent (tree_cart, space = '\t')
     tree_cart.write("user_cart.xml")
 
+    for i, (k, v) in enumerate(selection_to_cart.items()):
+        prod_text = str(v)
+        key_val = str(k)
 
-    # tree_cart = ET.parse("user_cart.xml")
-    # root_cart = tree_cart.getroot()
-
-    # for item in root_cart.findall("customer"):
-    #     new=ET.SubElement(item, "name")
-    #     new.text = selection_to_cart["name"]
-
-    # parent = ET.Element("user_cart")
-    # child_1 = ET.SubElement (parent, "child_1")
-    # cart_xml = ET.tostring(child_1)
-    # with open("user_cart.xml", "wb") as f:
-    #     f.write(cart_xml)
-
-
-    # for key in selection_to_cart:
-    #     user_cart = ET.SubElement (user_cart, key)
+        product = ET.SubElement (cart_item, key_val)
+        product.text = prod_text
+        root_cart.append(product)
+        ET.indent (tree_cart, space = '\t')
+        tree_cart.write("user_cart.xml")    
+        
 
 
 
-       
-    # print (name)
-    # print (category)
-    # print (price)
-    # print (weight)
+            
 
 
 
 
-    
-    # test = ""
 
-    # for item in root:
-    #     if item.text == selection:
-    #         test = selection
-    #         print(test)
 
