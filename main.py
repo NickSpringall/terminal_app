@@ -6,10 +6,10 @@ import os
 import pprint
 
 from search_functions import prod_search, disp_full, disp_category, disp_keyword 
-from cart_functions import selection, add_to_cart
+from cart_functions import product_disp_order, add_to_cart
 
 
-category_list = selection(prod_search())
+category_list = product_disp_order(prod_search())
 
 add_to_cart()
 

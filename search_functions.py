@@ -50,7 +50,7 @@ def disp_full():
 
 
 def prod_search():
-    search_term = input ("Would you like to search by Catergory, Keyword or full list? (Type Catergory, Keyword or Full): ")
+    search_term = input ("Would you like to search by Catergory, Keyword or full list? (Type Category, Keyword or Full): ")
     
     if search_term.lower() == "category":
         prod_num_list = disp_category()

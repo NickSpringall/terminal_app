@@ -8,20 +8,27 @@ tree = ET.parse('product_database.xml')
 list_root = tree.getroot()
 
 
-def selection(list):
-    # print out item attributes if on the search list
-    prods = {}
+def product_disp_order(list):
+
+    prods = [{
+    }]
+
+# x is list of item numbers
+    item_dict = {}
 
     for x in list:
         for item in list_root:
             if item.attrib == x:
                 for sub in item:
-                    print(sub.tag, sub.text)
-                    prods.update({sub.tag: sub.text})
+                    sub_tag = sub.tag
+                    sub_text = sub.text
+                    item_dict = [] = sub_text
             else:
                 continue
+
         else:
             continue
+    print (item_dict)
     return prods
     
 
