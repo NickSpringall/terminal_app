@@ -40,34 +40,67 @@ def add_to_cart():
         items = root.createElement('customer')
         xml.appendChild(items)
         
-
         xml_str = root.toprettyxml(indent ="\t")
         save_path_file = "user_cart.xml"
 
         with open(save_path_file, "w") as f:
             f.write(xml_str)
     
-    name = ""
-    category = ""
-    price = ""
-    weight = ""
+    selection_to_cart = {
+        "quantity": quantity
+    }
 
     for item in list_root:
             if item[0].text.lower() == selection.lower():
                 for sub in item:
                         if sub.tag == "name":
-                            name = sub.text
+                            selection_to_cart["name"] = sub.text
                         elif sub.tag == "category":
-                            category =  sub.text 
+                            selection_to_cart["category"] = sub.text
                         elif sub.tag == "price":
-                            price = sub.text
+                            selection_to_cart["price"] = sub.text
                         elif sub.tag == "weight":
-                            weight = sub.text
-        
-    print (name)
-    print (category)
-    print (price)
-    print (weight)
+                            selection_to_cart["weight"] = sub.text
+
+    print (selection_to_cart)
+    
+    tree_cart = ET.parse("user_cart.xml")
+    root_cart = tree_cart.getroot()
+    print(ET.tostring(root_cart))
+
+    new_product = ET.Element("name")
+    new_product.text = "hello"
+    root_cart.append(new_product)
+    print(new_product, new_product.text)
+
+    tree_cart.write("user_cart.xml")
+
+
+    # tree_cart = ET.parse("user_cart.xml")
+    # root_cart = tree_cart.getroot()
+
+    # for item in root_cart.findall("customer"):
+    #     new=ET.SubElement(item, "name")
+    #     new.text = selection_to_cart["name"]
+
+    # parent = ET.Element("user_cart")
+    # child_1 = ET.SubElement (parent, "child_1")
+    # cart_xml = ET.tostring(child_1)
+    # with open("user_cart.xml", "wb") as f:
+    #     f.write(cart_xml)
+
+
+    # for key in selection_to_cart:
+    #     user_cart = ET.SubElement (user_cart, key)
+
+
+
+       
+    # print (name)
+    # print (category)
+    # print (price)
+    # print (weight)
+
 
 
 
