@@ -87,5 +87,3 @@ def search_restart(response):
     elif response =="no":
          print("go to checkout----")
          return
-
-
