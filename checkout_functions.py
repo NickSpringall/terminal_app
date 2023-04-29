@@ -1,5 +1,6 @@
 def checkout():
     pass
+
 # get user info and save to user_cart.XML
     # first name
     # last name
