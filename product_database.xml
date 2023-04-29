@@ -5,7 +5,7 @@
         <category>tables</category>
         <price>30.40</price>
         <description>this is a table blah blah blah</description>
-        <weight>20kg</weight>
+        <weight>20kg</weight> 
         <keywords>light modern wood table</keywords>
     </item>
 
@@ -36,5 +36,5 @@
         <weight>20kg</weight>
         <keywords>light modern wood table</keywords>
     </item>
-
 </items>
+

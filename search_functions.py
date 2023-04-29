@@ -5,8 +5,9 @@ root = tree.getroot()
 
 from tools import word_check
 
-
 prod_num_list = []
+import config
+config.x = prod_num_list
 
 def disp_category():
     cat_list = []
@@ -59,5 +60,4 @@ def prod_search():
     if search_term.lower() == "full":
         prod_num_list = disp_full()
 
-    
     return (prod_num_list)
