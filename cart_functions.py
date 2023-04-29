@@ -9,12 +9,15 @@ import xml.etree.ElementTree as ET
 tree = ET.parse('product_database.xml')
 list_root = tree.getroot()
 
-from tools import file_check, get_stock_level
+from tools import file_check, get_stock_level, is_selection_on_database
 from item_display_functions import sort_display_order, product_disp
 from search_functions import prod_search
 
 def add_to_cart():
     selection = input("Please type the name of the product you would like to order: ")
+
+    if is_selection_on_database(selection) == None:
+        selection = input("Please type the name of a product from the product list you would like to order: ")
 
     quantity = int(input("how many would you like to order? "))
 

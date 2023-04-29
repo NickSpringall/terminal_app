@@ -90,5 +90,14 @@
 			<stock> 1 </stock>
 			<weight>8kg</weight>
 		</item>
+		<item>
+			<quantity>1</quantity>
+			<prod_code>{'number': '12038'}</prod_code>
+			<name>Product 2</name>
+			<category>tables</category>
+			<price>47.40</price>
+			<stock> 1 </stock>
+			<weight>8kg</weight>
+		</item>
 	</items>
 </user_cart>

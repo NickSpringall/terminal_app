@@ -3,7 +3,7 @@ import xml.etree.ElementTree as ET
 tree = ET.parse('product_database.xml')
 root = tree.getroot()
 
-from tools import word_check
+from tools import word_check, is_keyword_selection_on_database
 
 prod_num_list = []
 import config
@@ -32,7 +32,10 @@ def disp_category():
 
 
 def disp_keyword():
-    user_keyword = input("please type in a keyword to search: ")
+    user_keyword = input("please type in a keyword to search:\n")
+    while is_keyword_selection_on_database(user_keyword) is None:
+        user_keyword = input("Sorry, that keyword returned no results, please type in another keyword to search:\n")
+
     for item in root:
         for x in item.findall('keywords'):
             if word_check(x.text, user_keyword) is True:
