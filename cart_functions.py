@@ -9,15 +9,23 @@ import xml.etree.ElementTree as ET
 tree = ET.parse('product_database.xml')
 list_root = tree.getroot()
 
-from tools import file_check
+from tools import file_check, get_stock_level
 from item_display_functions import sort_display_order, product_disp
 from search_functions import prod_search
 
 def add_to_cart():
     selection = input("Please type the name of the product you would like to order: ")
 
-    # write function that lets user know how many left in stock and prevents them entering more
     quantity = int(input("how many would you like to order? "))
+
+# use TypeError catching to send back to search maybe have it so user can quit, show cart or checkout at any time?
+    while quantity > int(get_stock_level(selection)):
+        if int(get_stock_level(selection)) == 1:
+            quantity = input("Sorry, we only have" + str(get_stock_level(selection)) + selection + " in stock\n Please select another quantity or type 'search' to search for another product")
+        else: 
+            quantity = input("Sorry, we only have" + str(get_stock_level(selection)) + selection + "s in stock\n Please select another quantity or type 'search' to search for another product")
+
+
 
     # create shopping user_cart.xml file if it doesn't exist
     if file_check() is False:
@@ -37,6 +45,7 @@ def add_to_cart():
         "name": "",
         "category": "",
         "price": "",
+        "stock": "",
         "weight": ""
         }
     
@@ -51,6 +60,8 @@ def add_to_cart():
                             selection_to_cart["category"] = sub.text
                         elif sub.tag == "price":
                             selection_to_cart["price"] = sub.text
+                        elif sub.tag == "left_in_stock":
+                            selection_to_cart["stock"] = sub.text
                         elif sub.tag == "weight":
                             selection_to_cart["weight"] = sub.text
 

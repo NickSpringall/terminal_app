@@ -37,6 +37,7 @@ def product_disp(list):
 def sort_display_order(list):
     order_choice = int(input("how would you like the results to be sorted? \n type the number associated with your choice \n 1 - Highest price first \n 2 - lowest price first \n 3 - alphabetical \n 4 - weight \n 5 - Category \n"))
     if order_choice == 1:
+        
         pprint.pprint(sorted(list, key=operator.itemgetter('name'), reverse=True))
 
 

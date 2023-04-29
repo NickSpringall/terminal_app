@@ -7,6 +7,7 @@
         <description>this is a table blah blah blah</description>
         <weight>20kg</weight> 
         <keywords>light modern wood table</keywords>
+        <left_in_stock> 100 </left_in_stock>
     </item>
 
     <item number="12038">
@@ -16,6 +17,7 @@
         <description>chair chair chair blah blah blah</description>
         <weight>8kg</weight>
         <keywords>light modern woo leather chair silver green</keywords>
+        <left_in_stock> 1 </left_in_stock>
     </item>
 
     <item number="20273">
@@ -25,6 +27,7 @@
         <description>lamp lamp lamp blah blah blah</description>
         <weight>2kg</weight>
         <keywords>pink green silver </keywords>
+        <left_in_stock> 10 </left_in_stock>
     </item>
 
 
@@ -35,6 +38,7 @@
         <description>this is a table blah blah blah</description>
         <weight>20kg</weight>
         <keywords>light modern wood table</keywords>
+        <left_in_stock> 34 </left_in_stock>
     </item>
 </items>
 
