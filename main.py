@@ -22,5 +22,6 @@ checkout()
         # build check out functions
         # build some kind of business side functions, viewing, updateing product database 
         # error handling
+        # testing
 
 

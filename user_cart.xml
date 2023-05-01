@@ -1,4 +1,11 @@
 <user_cart>
+	<customer>
+		<user_first_name>ss</user_first_name>
+		<user_surname>sss</user_surname>
+		<user_phone_no>ss</user_phone_no>
+		<user_address>s</user_address>
+		<order_date>2023-05-01</order_date>
+	</customer>
 	<items>
 		<item>
 			<quantity>22</quantity>
@@ -83,6 +90,24 @@
 		</item>
 		<item>
 			<quantity>2</quantity>
+			<prod_code>{'number': '12038'}</prod_code>
+			<name>Product 2</name>
+			<category>tables</category>
+			<price>47.40</price>
+			<stock> 1 </stock>
+			<weight>8kg</weight>
+		</item>
+		<item>
+			<quantity>1</quantity>
+			<prod_code>{'number': '12038'}</prod_code>
+			<name>Product 2</name>
+			<category>tables</category>
+			<price>47.40</price>
+			<stock> 1 </stock>
+			<weight>8kg</weight>
+		</item>
+		<item>
+			<quantity>1</quantity>
 			<prod_code>{'number': '12038'}</prod_code>
 			<name>Product 2</name>
 			<category>tables</category>

@@ -3,7 +3,6 @@ import os
 import pprint 
 
 import config
-import search_functions
 
 import xml.etree.ElementTree as ET
 tree = ET.parse('product_database.xml')
@@ -21,13 +20,13 @@ def add_to_cart():
 
     quantity = int(input("how many would you like to order? "))
 
-# use TypeError catching to send back to search maybe have it so user can quit, show cart or checkout at any time?
+# use TypeError catching to send back to search maybe have it so user can quit, show cart or checkout at any time? 
+            # FIX OUTPUT INT OR STR FOR COMPARISON 
     while quantity > int(get_stock_level(selection)):
         if int(get_stock_level(selection)) == 1:
             quantity = input("Sorry, we only have" + str(get_stock_level(selection)) + selection + " in stock\n Please select another quantity or type 'search' to search for another product")
         else: 
             quantity = input("Sorry, we only have" + str(get_stock_level(selection)) + selection + "s in stock\n Please select another quantity or type 'search' to search for another product")
-
 
 
     # create shopping user_cart.xml file if it doesn't exist
@@ -97,7 +96,6 @@ def add_to_cart():
     
     next_step = input("would you like to add another product?: ")
     return next_step
-
 
 def search_restart(response):
     
