@@ -1,7 +1,6 @@
 from xml.dom import minidom 
 import os
 import pprint 
-
 import config
 
 import xml.etree.ElementTree as ET
@@ -11,6 +10,7 @@ list_root = tree.getroot()
 from tools import file_check, get_stock_level, is_selection_on_database
 from item_display_functions import sort_display_order, product_disp
 from search_functions import prod_search
+from write_prod_to_cart_function import write_prod_to_cart_function
 
 def add_to_cart():
     selection = input("Please type the name of the product you would like to order: ")
@@ -80,6 +80,8 @@ def add_to_cart():
         root_cart.append(item) 
         ET.indent (tree_cart, space = '\t')
 
+    # write_prod_to_cart_function("user_cart.xml", selection_to_cart)
+
     items = root_cart.find("items")
     cart_item = ET.SubElement(items, "item")
     for i, (k, v) in enumerate(selection_to_cart.items()):
@@ -93,6 +95,7 @@ def add_to_cart():
     weight = root_cart.find("weight")
     root_cart.remove(weight)
     tree_cart.write("user_cart.xml")
+
     
     next_step = input("would you like to add another product?: ")
     return next_step

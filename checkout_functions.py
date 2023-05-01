@@ -1,5 +1,6 @@
 import os
 import xml.etree.ElementTree as ET
+import re
 
 from datetime import date
 
@@ -17,7 +18,7 @@ def checkout():
     config.y = user_first_name.lower() + ("_") + user_surname.lower() + (".xml")
     
     # write something to check if it's off this format, if they are happy allow it to continue
-    user_address = input("please type your street address with the following format (with commas) - \n number street name, suburb, state , postcode \n foir example - 110 Street St, West End, QLD, 4000")
+    user_address = input("please type your street address with the following format (with commas) - \n number street name, suburb, state , postcode \n for example - 110 Street St, West End, QLD, 4000")
 
     # Create dictionary with customer's information
     for i in ('user_first_name', 'user_surname', 'user_phone_no', 'user_address', 'order_date'):
@@ -47,6 +48,23 @@ def checkout():
     new_file_name = "/Users/nickspringall/Desktop/Coder lessons/terminal_app/" + (user_first_name.lower() + "_" + user_surname.lower()) + ".xml"
     os.rename(file_name, new_file_name)
 
+def sub_total():
+    tree_cart = ET.parse(config.y)
+    root_cart = tree_cart.getroot()
+
+    total_price = 0
+    for item in root_cart.findall ("./items/item"):
+        prod_price = item[4].text
+        price = prod_price
+        prod_weight_int = float(re.sub("[^0-9]", "", price))
+
+        quantity = item[0].text
+        prod_quant = quantity
+        print(prod_quant)
+
+        total_price = float(total_price) + float(float(prod_price) * int(prod_quant))
+    
+        print("the subtotal of your order is" + str(total_price))
 
 
     
@@ -56,13 +74,6 @@ def checkout():
 
 
 
-# update XML name to user's actual name_cart
-
-# calculate shipping from info
-    # ask if they want express or standard
-        # figure out a state by state shipping rate per kg and make a function
-        # calculate total
-        # save to cart.xml
 
 # print summary of order
 
