@@ -48,3 +48,4 @@ def get_stock_level(item):
                          stock = sub.text
     return stock
 
+
