@@ -1,0 +1,31 @@
+<user_cart>
+	<items>
+		<item>
+			<quantity>1</quantity>
+			<prod_code>{'number': '11289'}</prod_code>
+			<name>Product 1</name>
+			<category>lamps</category>
+			<price>43.60</price>
+			<stock>39</stock>
+			<weight>8kg</weight>
+		</item>
+		<item>
+			<quantity>1</quantity>
+			<prod_code>{'number': '11289'}</prod_code>
+			<name>Product 1</name>
+			<category>lamps</category>
+			<price>43.60</price>
+			<stock>39</stock>
+			<weight>8kg</weight>
+		</item>
+		<item>
+			<quantity>3</quantity>
+			<prod_code>{'number': '11289'}</prod_code>
+			<name>Product 1</name>
+			<category>lamps</category>
+			<price>43.60</price>
+			<stock>39</stock>
+			<weight>8kg</weight>
+		</item>
+	</items>
+</user_cart>

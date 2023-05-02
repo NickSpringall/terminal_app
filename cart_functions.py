@@ -96,18 +96,17 @@ def add_to_cart():
     root_cart.remove(weight)
     tree_cart.write("user_cart.xml")
 
-    
-    next_step = input("would you like to add another product?: ")
-    return next_step
 
-def search_restart(response):
+def search_restart():
+
+    next_step = input("would you like to add another product?: ")
     
-    if response == "yes":
+    if next_step == "yes":
         search_restart_point = input("would you like to view the previous list or see search options again? type 'previous list' or 'options' ")
-        if search_restart_point == "previous list":
-            sort_display_order(product_disp(config.x))
+        # if search_restart_point == "previous list":
+        #     sort_display_order(product_disp(config.x))
         if search_restart_point == "options":
-            sort_display_order(product_disp(prod_search()))
-    elif response =="no":
+            return "restart"
+    elif next_step =="no":
          print("go to checkout----")
-         return
+         return 

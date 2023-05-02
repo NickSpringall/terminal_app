@@ -4,6 +4,7 @@ import xml.etree.ElementTree as ET
 tree = ET.parse('product_database.xml')
 list_root = tree.getroot()
 
+
 def word_check(str, keyword):
     keyword_list = str.split()
     if keyword in str:
@@ -18,6 +19,7 @@ def file_check():
 
 import config
 import search_functions
+
 
 def is_selection_on_database(selection):
      for prod in list_root:
@@ -48,6 +50,7 @@ def get_stock_level(item):
                          stock = sub.text
     return stock
 
+
 def update_product_list(product, quantity):
 
     tree = ET.parse('product_database.xml')
@@ -58,13 +61,3 @@ def update_product_list(product, quantity):
             original_quant = item[6].text
             item[6].text = str(int(original_quant) - int(quantity))
     tree.write("product_database.xml")
-
-
-             
-
-
-
-
-
-
-     

@@ -65,35 +65,5 @@ def sub_total():
         total_price = float(total_price) + float(float(prod_price_float) * int(prod_quant))
     
         print("the subtotal of your order is" + str(total_price))
-        
+
     return total_price
-
-        
-
-
-    
-
-
-
-
-
-
-
-# print summary of order
-
-    # customer numer and details
-
-    # product names
-    # product quantity
-    # unit cost
-    # total cost
-
-    # goods total
-    # shipping type and cost
-    # grand total
-
-# ask for confirmation of details and order
-
-
-# modify left in stock numbers
-# generate warehouse picking file with product numbers, customer details, shipping details (express of standard)
