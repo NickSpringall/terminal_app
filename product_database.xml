@@ -20,7 +20,7 @@
     </item>
 
      <item number="10399">
-        <name>Product 1</name>
+        <name>Product 3</name>
         <category>tables</category>
         <price>18.40</price>
         <description>this is a table blah blah blah</description>
@@ -30,7 +30,7 @@
     </item>
 
      <item number="11289">
-        <name>Product 1</name>
+        <name>Product 4</name>
         <category>lamps</category>
         <price>43.60</price>
         <description>this is a table blah blah blah</description>

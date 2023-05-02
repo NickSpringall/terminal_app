@@ -106,7 +106,9 @@ def search_restart():
         # if search_restart_point == "previous list":
         #     sort_display_order(product_disp(config.x))
         if search_restart_point == "options":
-            return "restart"
+            return "restart", []
+        if search_restart_point == "previous list":
+            return "restart", config.x
     elif next_step =="no":
-         print("go to checkout----")
-         return 
+         print("go to checkout-----")
+         return None, None

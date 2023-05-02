@@ -51,16 +51,19 @@ def disp_full():
     return (prod_num_list)
 
 
-def prod_search():
-    search_term = input ("Would you like to search by Catergory, Keyword or full list? (Type Category, Keyword or Full): ")
-    
-    if search_term.lower() == "category":
-        prod_num_list = disp_category()
-        
-    if search_term.lower() == "keyword":
-        prod_num_list = disp_keyword()
+def prod_search(prod_list):
+    if prod_list != []:
+        return prod_list
+    else:
+        search_term = input ("Would you like to search by Catergory, Keyword or full list? (Type Category, Keyword or Full): ")
+            
+        if search_term.lower() == "category":
+            prod_num_list = disp_category()
+                
+        if search_term.lower() == "keyword":
+            prod_num_list = disp_keyword()
 
-    if search_term.lower() == "full":
-        prod_num_list = disp_full()
+        if search_term.lower() == "full":
+            prod_num_list = disp_full()
 
-    return (prod_num_list)
+        return (prod_num_list)
