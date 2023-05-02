@@ -1,0 +1,65 @@
+<user_cart>
+	<customer>
+		<user_first_name>Nick</user_first_name>
+		<user_surname>Springall</user_surname>
+		<user_phone_no>3333333</user_phone_no>
+		<user_address>eeee</user_address>
+		<order_date>2023-05-02</order_date>
+	</customer>
+	<items>
+		<item>
+			<quantity>1</quantity>
+			<prod_code>{'number': '11289'}</prod_code>
+			<name>Product 1</name>
+			<category>lamps</category>
+			<price>43.60</price>
+			<stock>39</stock>
+			<weight>8kg</weight>
+		</item>
+		<item>
+			<quantity>1</quantity>
+			<prod_code>{'number': '11289'}</prod_code>
+			<name>Product 4</name>
+			<category>lamps</category>
+			<price>43.60</price>
+			<stock>39</stock>
+			<weight>8kg</weight>
+		</item>
+		<item>
+			<quantity>20</quantity>
+			<prod_code>{'number': '10399'}</prod_code>
+			<name>Product 3</name>
+			<category>tables</category>
+			<price>18.40</price>
+			<stock>49</stock>
+			<weight>5kg</weight>
+		</item>
+		<item>
+			<quantity>1</quantity>
+			<prod_code>{'number': '10239'}</prod_code>
+			<name>Product 2</name>
+			<category>chairs</category>
+			<price>130.40</price>
+			<stock> 12 </stock>
+			<weight>122kg</weight>
+		</item>
+		<item>
+			<quantity>3</quantity>
+			<prod_code>{'number': '10273'}</prod_code>
+			<name>Product 1</name>
+			<category>tables</category>
+			<price>30.40</price>
+			<stock>99</stock>
+			<weight>20kg</weight>
+		</item>
+		<item>
+			<quantity>1</quantity>
+			<prod_code />
+			<name>express postage</name>
+			<category />
+			<price>1490</price>
+			<stock />
+			<weight />
+		</item>
+	</items>
+</user_cart>

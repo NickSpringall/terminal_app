@@ -30,7 +30,7 @@ def add_to_cart():
 
 
     # create shopping user_cart.xml file if it doesn't exist
-    if file_check() is False:
+    if file_check("user_cart.xml") is False:
         root = minidom.Document()
         xml = root.createElement('user_cart')
         root.appendChild(xml)

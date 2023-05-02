@@ -6,7 +6,7 @@
         <description>this is a table blah blah blah</description>
         <weight>20kg</weight> 
         <keywords>light modern wood table</keywords>
-        <left_in_stock>99</left_in_stock>
+        <left_in_stock>95</left_in_stock>
     </item>
 
      <item number="10239">
@@ -16,7 +16,7 @@
         <description>this is a table blah blah blah</description>
         <weight>122kg</weight> 
         <keywords>light modern purple green</keywords>
-        <left_in_stock> 12 </left_in_stock>
+        <left_in_stock>11</left_in_stock>
     </item>
 
      <item number="10399">
@@ -26,7 +26,7 @@
         <description>this is a table blah blah blah</description>
         <weight>5kg</weight> 
         <keywords>light modern purple green</keywords>
-        <left_in_stock>49</left_in_stock>
+        <left_in_stock>29</left_in_stock>
     </item>
 
      <item number="11289">
@@ -36,6 +36,6 @@
         <description>this is a table blah blah blah</description>
         <weight>8kg</weight> 
         <keywords>light modern pink silver</keywords>
-        <left_in_stock>39</left_in_stock>
+        <left_in_stock>38</left_in_stock>
     </item>
 </items>

@@ -4,6 +4,10 @@ from cart_functions import add_to_cart, search_restart
 from checkout_functions import checkout, sub_total
 from postage_functions import shipping, total_shipping_weight
 from order_summary_functions import order_summary
+from returning_user_check import returning_user_check
+
+
+user_check = returning_user_check()
 
 restart = "restart"
 prod_list = []

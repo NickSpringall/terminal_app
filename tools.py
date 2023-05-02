@@ -13,13 +13,11 @@ def word_check(str, keyword):
         return False
     
 
-def file_check():
-    exists = os.path.isfile("/Users/nickspringall/Desktop/Coder lessons/terminal_app/user_cart.xml")
+def file_check(file):
+    exists = os.path.isfile("/Users/nickspringall/Desktop/Coder lessons/terminal_app/" + file)
     return exists
 
 import config
-import search_functions
-
 
 def is_selection_on_database(selection):
      for prod in list_root:
