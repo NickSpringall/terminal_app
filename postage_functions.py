@@ -1,8 +1,10 @@
-import xml.etree.ElementTree as ET
+
 import re
 import config
 
 from write_prod_to_cart_function import write_prod_to_cart_function
+
+import xml.etree.ElementTree as ET
 
 def total_shipping_weight():
         
@@ -42,9 +44,6 @@ def shipping(package_weight):
     elif ship_method == "standard":
         ship_price = standard_ship
 
-
-    
-
     postage = {
         "quantity": "1",
         "prod_code": "",
@@ -55,8 +54,15 @@ def shipping(package_weight):
         "weight": ""
     }
 
-    print (postage)
-
     write_prod_to_cart_function(config.y, postage)
+
+# def order_summary():
+    
+#     for item in root_cart.findall ("./items/item"):
+#         print (item[2].text)
+
+
+#     print("Thank you for your order, your order total is ")
+    
 
 

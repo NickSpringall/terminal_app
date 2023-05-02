@@ -56,15 +56,17 @@ def sub_total():
     for item in root_cart.findall ("./items/item"):
         prod_price = item[4].text
         price = prod_price
-        prod_weight_int = float(re.sub("[^0-9]", "", price))
+        prod_price_float = float(re.sub("[^0-9]", "", price))
 
         quantity = item[0].text
         prod_quant = quantity
         print(prod_quant)
 
-        total_price = float(total_price) + float(float(prod_price) * int(prod_quant))
+        total_price = float(total_price) + float(float(prod_price_float) * int(prod_quant))
     
         print("the subtotal of your order is" + str(total_price))
+
+        
 
 
     
