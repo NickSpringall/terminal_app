@@ -35,7 +35,3 @@ def sort_display_order(list):
     if order_choice == 1:
 
         pprint.pprint(sorted(list, key=operator.itemgetter('name'), reverse=True))
-
-
-
- 

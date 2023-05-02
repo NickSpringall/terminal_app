@@ -25,5 +25,3 @@ def order_summary(sub, ship, file_name):
         print("Product --" + str(name) + "price/unit -- $" + str(price) + "quantity --" + str(quantity) + "sub total $" + str(float(price) * int(quantity)))
 
         update_product_list(name, quantity)
-
-

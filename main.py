@@ -30,4 +30,3 @@ sub = sub_total(config.y)
 ship = shipping(total_shipping_weight())
 
 order_summary(sub, ship, config.y)
-
