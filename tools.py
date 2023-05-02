@@ -13,8 +13,8 @@ def word_check(str, keyword):
         return False
     
 
-def file_check(file):
-    exists = os.path.isfile("/Users/nickspringall/Desktop/Coder lessons/terminal_app/" + file)
+def file_check(file_name):
+    exists = os.path.isfile("/Users/nickspringall/Desktop/Coder lessons/terminal_app/" + file_name)
     return exists
 
 import config

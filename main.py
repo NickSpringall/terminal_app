@@ -7,7 +7,7 @@ from order_summary_functions import order_summary
 from returning_user_check import returning_user_check
 
 
-user_check = returning_user_check()
+user_cart_name = returning_user_check()
 
 restart = "restart"
 prod_list = []
@@ -15,6 +15,7 @@ prod_list = []
 while restart == "restart":
     sort_display_order(product_disp(prod_search(prod_list)))
     add_to_cart()
+    
     cart_loop = search_restart()
     restart = cart_loop[0]
     prod_list = cart_loop[1]
