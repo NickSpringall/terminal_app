@@ -48,4 +48,23 @@ def get_stock_level(item):
                          stock = sub.text
     return stock
 
+def update_product_list(product, quantity):
 
+    tree = ET.parse('product_database.xml')
+    list_root = tree.getroot()
+
+    for item in list_root:
+        if item[0].text == product:
+            original_quant = item[6].text
+            item[6].text = str(int(original_quant) - int(quantity))
+    tree.write("product_database.xml")
+
+
+             
+
+
+
+
+
+
+     

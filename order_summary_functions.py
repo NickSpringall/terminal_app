@@ -1,6 +1,8 @@
 import xml.etree.ElementTree as ET
 import config
 
+from tools import update_product_list
+
 def order_summary(sub, ship):
     tree_cart = ET.parse(config.y)
     root_cart = tree_cart.getroot()
@@ -21,3 +23,7 @@ def order_summary(sub, ship):
         quantity = item[0].text
 
         print("Product --" + str(name) + "price/unit -- $" + str(price) + "quantity --" + str(quantity) + "sub total $" + str(float(price) * int(quantity)))
+
+        update_product_list(name, quantity)
+
+

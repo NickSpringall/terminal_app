@@ -1,7 +1,7 @@
 <user_cart>
 	<customer>
 		<user_first_name>dd</user_first_name>
-		<user_surname>dds</user_surname>
+		<user_surname>dd</user_surname>
 		<user_phone_no>dd</user_phone_no>
 		<user_address>dd</user_address>
 		<order_date>2023-05-02</order_date>
@@ -9,19 +9,19 @@
 	<items>
 		<item>
 			<quantity>1</quantity>
-			<prod_code>{'number': '12038'}</prod_code>
-			<name>Product 2</name>
+			<prod_code>{'number': '10273'}</prod_code>
+			<name>Product 1</name>
 			<category>tables</category>
-			<price>47.40</price>
-			<stock> 1 </stock>
-			<weight>8kg</weight>
+			<price>30.40</price>
+			<stock> 100 </stock>
+			<weight>20kg</weight>
 		</item>
 		<item>
 			<quantity>1</quantity>
 			<prod_code />
 			<name>standard postage</name>
 			<category />
-			<price>24</price>
+			<price>60</price>
 			<stock />
 			<weight />
 		</item>

@@ -18,8 +18,3 @@ ship = shipping(total_shipping_weight())
 
 order_summary(sub, ship)
 
-
-
-
-
-
