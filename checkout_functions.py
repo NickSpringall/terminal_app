@@ -48,8 +48,8 @@ def checkout():
     new_file_name = "/Users/nickspringall/Desktop/Coder lessons/terminal_app/" + (user_first_name.lower() + "_" + user_surname.lower()) + ".xml"
     os.rename(file_name, new_file_name)
 
-def sub_total():
-    tree_cart = ET.parse(config.y)
+def sub_total(file_name):
+    tree_cart = ET.parse(file_name)
     root_cart = tree_cart.getroot()
 
     total_price = 0

@@ -3,6 +3,7 @@ import xml.etree.ElementTree as ET
 tree = ET.parse('product_database.xml')
 root = tree.getroot()
 
+from quit_view_checkout_function import listen_for_quit_view_checkout
 from tools import word_check, is_keyword_selection_on_database
 
 prod_num_list = []
@@ -55,8 +56,10 @@ def prod_search(prod_list):
     if prod_list != []:
         return prod_list
     else:
-        search_term = input ("Would you like to search by Catergory, Keyword or full list? (Type Category, Keyword or Full): ")
-            
+        search_term =  listen_for_quit_view_checkout(input ("Would you like to search by Catergory, Keyword or full list? (Type Category, Keyword or Full): "))
+        while search_term == True:
+            search_term = input ("Would you like to search by Catergory, Keyword or full list? (Type Category, Keyword or Full): ")
+
         if search_term.lower() == "category":
             prod_num_list = disp_category()
                 

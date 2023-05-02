@@ -3,8 +3,8 @@ import config
 
 from tools import update_product_list
 
-def order_summary(sub, ship):
-    tree_cart = ET.parse(config.y)
+def order_summary(sub, ship, file_name):
+    tree_cart = ET.parse(file_name)
     root_cart = tree_cart.getroot()
 
     order_total = sub + ship
