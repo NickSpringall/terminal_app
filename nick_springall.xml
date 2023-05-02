@@ -1,0 +1,29 @@
+<user_cart>
+	<customer>
+		<user_first_name>nick</user_first_name>
+		<user_surname>springall</user_surname>
+		<user_phone_no>ee</user_phone_no>
+		<user_address>e</user_address>
+		<order_date>2023-05-02</order_date>
+	</customer>
+	<items>
+		<item>
+			<quantity>1</quantity>
+			<prod_code>{'number': '12038'}</prod_code>
+			<name>Product 2</name>
+			<category>tables</category>
+			<price>47.40</price>
+			<stock> 1 </stock>
+			<weight>8kg</weight>
+		</item>
+		<item>
+			<quantity>1</quantity>
+			<prod_code />
+			<name>standard postage</name>
+			<category />
+			<price>24</price>
+			<stock />
+			<weight />
+		</item>
+	</items>
+</user_cart>
