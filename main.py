@@ -12,9 +12,11 @@ search_restart(add_to_cart())
 
 checkout()
 
-sub_total()
+sub = sub_total()
 
-shipping(total_shipping_weight())
+ship = shipping(total_shipping_weight())
+
+order_summary(sub, ship)
 
 
 

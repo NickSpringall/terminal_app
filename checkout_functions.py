@@ -65,6 +65,8 @@ def sub_total():
         total_price = float(total_price) + float(float(prod_price_float) * int(prod_quant))
     
         print("the subtotal of your order is" + str(total_price))
+        
+    return total_price
 
         
 

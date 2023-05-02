@@ -1,9 +1,9 @@
 <user_cart>
 	<customer>
-		<user_first_name>nick</user_first_name>
-		<user_surname>springall</user_surname>
-		<user_phone_no>ee</user_phone_no>
-		<user_address>e</user_address>
+		<user_first_name>dd</user_first_name>
+		<user_surname>dds</user_surname>
+		<user_phone_no>dd</user_phone_no>
+		<user_address>dd</user_address>
 		<order_date>2023-05-02</order_date>
 	</customer>
 	<items>

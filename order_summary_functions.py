@@ -1,5 +1,4 @@
 import xml.etree.ElementTree as ET
-
 import config
 
 def order_summary(sub, ship):
@@ -8,7 +7,7 @@ def order_summary(sub, ship):
 
     order_total = sub + ship
     
-    print("Thankyou for your order, your order total is" + order_total)
+    print("Thankyou for your order, your order total is $" + str(order_total))
 
     print("your order summary is - ") 
     for item in root_cart.findall ("./items/item"):
@@ -21,4 +20,4 @@ def order_summary(sub, ship):
 
         quantity = item[0].text
 
-        print("Product --" + name + "price/unit --" + price + "quantity --" + quantity + "sub total $" + (float(price) * int(quantity)))
+        print("Product --" + str(name) + "price/unit -- $" + str(price) + "quantity --" + str(quantity) + "sub total $" + str(float(price) * int(quantity)))

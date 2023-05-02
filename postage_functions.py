@@ -56,6 +56,8 @@ def shipping(package_weight):
 
     write_prod_to_cart_function(config.y, postage)
 
+    return ship_price
+
 # def order_summary():
     
 #     for item in root_cart.findall ("./items/item"):
