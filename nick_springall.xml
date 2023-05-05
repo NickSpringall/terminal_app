@@ -25,5 +25,14 @@
 			<stock />
 			<weight />
 		</item>
+		<item>
+			<quantity>1</quantity>
+			<prod_code>{'number': '10239'}</prod_code>
+			<name>Product 2</name>
+			<category>chairs</category>
+			<price>130.40</price>
+			<stock>11</stock>
+			<weight>122kg</weight>
+		</item>
 	</items>
 </user_cart>

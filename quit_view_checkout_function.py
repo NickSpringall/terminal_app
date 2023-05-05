@@ -30,4 +30,4 @@ def listen_for_quit_view_checkout(input):
         pass
 
     else:
-        return None
+        return input

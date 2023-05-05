@@ -32,7 +32,7 @@ def add_to_cart():
     # create shopping user_cart.xml file if it doesn't exist
     if file_check(config.z) is False:
         root = minidom.Document()
-        xml = root.createElement('user_cart')
+        xml = root.createElement(config.z)
         root.appendChild(xml)
 
         xml_str = root.toprettyxml(indent ="\t")
@@ -69,7 +69,7 @@ def add_to_cart():
 
     
     # parse user cart
-    tree_cart = ET.parse("user_cart.xml")
+    tree_cart = ET.parse(config.z)
     root_cart = tree_cart.getroot()
 
     # check if the items sub tag exists in user_cart.xml and create one if not
@@ -94,7 +94,7 @@ def add_to_cart():
     root_cart.append(product)
     weight = root_cart.find("weight")
     root_cart.remove(weight)
-    tree_cart.write("user_cart.xml")
+    tree_cart.write(config.z)
 
 
 def search_restart():

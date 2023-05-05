@@ -4,8 +4,7 @@ import pprint
 import xml.etree.ElementTree as ET
 tree = ET.parse('product_database.xml')
 list_root = tree.getroot()
-
-import operator
+from operator import itemgetter
 
 def product_disp(list):
 
@@ -33,5 +32,37 @@ def product_disp(list):
 def sort_display_order(list):
     order_choice = int(input("how would you like the results to be sorted? \n type the number associated with your choice \n 1 - Highest price first \n 2 - lowest price first \n 3 - alphabetical \n 4 - weight \n 5 - Category \n"))
     if order_choice == 1:
+        for x in list:
+            price = x['price']
+            price_float = float(price)
+            x['price'] = price_float
+        pprint.pprint(sorted(list, key=lambda d: d['price'], reverse=True))
 
-        pprint.pprint(sorted(list, key=operator.itemgetter('name'), reverse=True))
+    elif order_choice == 1:
+        for x in list:
+            price = x['price']
+            price_float = float(price)
+            x['price'] = price_float
+        pprint.pprint(sorted(list, key=lambda d: d['price'], reverse=False))
+        
+    elif order_choice == 3:
+        pprint.pprint(sorted(list, key=lambda d: d['name'], reverse=False)) 
+
+    elif order_choice == 4:
+        for x in list:
+            weight = x['weight']
+            
+            weight_float = float(price)
+            x['price'] = price_float
+        pprint.pprint(sorted(list, key=lambda d: d['price'], reverse=False))
+
+    
+
+
+
+    if order_choice == 3:
+        pprint.pprint(sorted(list, key=lambda d: d['name'], reverse=False))
+
+        
+def alphabetical():
+    pprint.pprint(sorted(list, key=itemgetter('name'), reverse=True))
