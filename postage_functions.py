@@ -17,7 +17,7 @@ def total_shipping_weight():
 
         weight = item[6].text
         prod_weight = weight
-        prod_weight_int = int(re.sub("[^0-9]", "", prod_weight))
+        prod_weight_int = float(re.sub("[^0-9]", "", prod_weight))
         print(prod_weight_int)
 
         quantity = item[0].text

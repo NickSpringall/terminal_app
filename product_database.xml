@@ -1,7 +1,7 @@
 <items>
 
     <item number="10273">
-        <name>Product 1</name>
+        <name>Zebra</name>
         <category>tables</category>
         <price>30.23</price>
         <description>this is a table blah blah blah</description>
@@ -11,7 +11,7 @@
     </item>
 
     <item number="10399">
-        <name>Product 3</name>
+        <name>Pff</name>
         <category>tables</category>
         <price>18.50</price>
         <description>this is a table blah blah blah</description>
@@ -21,7 +21,7 @@
     </item>
 
      <item number="11289">
-        <name>Product 4</name>
+        <name>aa</name>
         <category>lamps</category>
         <price>43.45</price>
         <description>this is a table blah blah blah</description>
@@ -31,7 +31,7 @@
     </item>
 
     <item number="10239">
-        <name>Product 2</name>
+        <name>bc</name>
         <category>chairs</category>
         <price>130.20</price>
         <description>this is a table blah blah blah</description>

@@ -1,4 +1,5 @@
 import os
+import re
 
 import xml.etree.ElementTree as ET
 tree = ET.parse('product_database.xml')
@@ -59,3 +60,6 @@ def update_product_list(product, quantity):
             original_quant = item[6].text
             item[6].text = str(int(original_quant) - int(quantity))
     tree.write("product_database.xml")
+
+def remove_letters_to_float(string):
+    return float(re.sub("[^0-9]", "", string))
