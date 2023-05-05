@@ -80,7 +80,24 @@ def add_to_cart():
         root_cart.append(item) 
         ET.indent (tree_cart, space = '\t')
 
-    # write_prod_to_cart_function("user_cart.xml", selection_to_cart)
+# check if item already exists in cart and if sufficient stock is available
+    items = root_cart.find("items")
+    for x in items:
+        if bool(x[2].text == selection) is True:
+            already_in_cart = int(x[0].text)
+            current_stock = int(get_stock_level(selection))
+            requested_stock = (already_in_cart + quantity)
+
+            if current_stock <= requested_stock:
+                print ("You already have " + str(already_in_cart) + " units of " + str(selection) + " in your cart and there are only " + str(current_stock) + " in stock")
+                quantity = input("would you like to add ")
+
+            else:
+                for x in items:
+                    for y in x:
+                        if y.text == (selection):
+                            items.remove(x)
+                            selection_to_cart["quantity"] = requested_stock
 
     items = root_cart.find("items")
     cart_item = ET.SubElement(items, "item")

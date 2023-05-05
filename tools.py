@@ -41,14 +41,15 @@ def is_keyword_selection_on_database(keyword):
     
 
 def get_stock_level(item):
-    
+    tree = ET.parse('product_database.xml')
+    list_root = tree.getroot()
+
     for prod in list_root:
             if prod[0].text.lower() == item.lower():
                  for sub in prod:
                     if sub.tag == "left_in_stock":
                          stock = sub.text
     return stock
-
 
 def update_product_list(product, quantity):
 
