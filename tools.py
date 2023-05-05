@@ -62,4 +62,4 @@ def update_product_list(product, quantity):
     tree.write("product_database.xml")
 
 def remove_letters_to_float(string):
-    return float(re.sub("[^0-9]", "", string))
+    return float(re.sub("[^0-9.]", "", string))

@@ -34,12 +34,17 @@ def int_order(list, category_key, order):
         x[category_key] = cat
     return sorted(list, key=lambda d: d[category_key], reverse=order)
    
+def add_back_dollar_sign(list):
+    for x in list:
+        x['price'] = "$" + str(x['price'])
 
 
 def sort_display_order(list):
     order_choice = int(input("how would you like the results to be sorted? \n type the number associated with your choice \n 1 - Highest price first \n 2 - lowest price first \n 3 - alphabetical \n 4 - weight \n 5 - Category \n"))
     if order_choice == 1:
-        pprint.pprint(int_order(list, 'price', True))
+        ordered_list = (int_order(list, 'price', True))
+        add_back_dollar_sign(ordered_list)
+        pprint.pprint (ordered_list)
 
     elif order_choice == 2:
         pprint.pprint(int_order(list, 'price', False))
