@@ -5,6 +5,7 @@ root = tree.getroot()
 
 from quit_view_checkout_function import listen_for_quit_view_checkout
 from tools import word_check, is_keyword_selection_on_database
+from exception_functions import no_numeric_chars_check, response_on_list_check
 
 prod_num_list = []
 import config
@@ -21,7 +22,10 @@ def disp_category():
 
     print ("Please select from the following categories")
     print (cat_list)
-    cat_choice = input ("Choice: ")
+    # cat_choice = input("Choice: ")
+
+    cat_choice = no_numeric_chars_check(input("Choice: "))
+
 
     for item in root:
         for x in item.findall('category'):
@@ -56,17 +60,16 @@ def prod_search(prod_list):
     if prod_list != []:
         return prod_list
     else:
-        search_term =  listen_for_quit_view_checkout(input ("Would you like to search by Catergory, Keyword or full list? (Type Category, Keyword or Full): "))
-        while search_term == True:
-            search_term = input ("Would you like to search by Catergory, Keyword or full list? (Type Category, Keyword or Full): ")
+        cat_options = ("Category", "Keyword", "Full")
+        search_term = response_on_list_check (input ("Would you like to search by Catergory, Keyword or Full list? (Type Category, Keyword or Full): "), cat_options)
 
-        if search_term.lower() == "category":
+        if search_term == "category":
             prod_num_list = disp_category()
                 
-        if search_term.lower() == "keyword":
+        if search_term == "keyword":
             prod_num_list = disp_keyword()
 
-        if search_term.lower() == "full":
+        if search_term == "full":
             prod_num_list = disp_full()
 
         return (prod_num_list)

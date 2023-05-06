@@ -4,7 +4,7 @@ import config
 import xml.etree.ElementTree as ET
 
 
-
+# asks user if they already have a cart and if so to input their name. Checks name against carts on file and creates new cart if no cart found belonging to user"
 def returning_user_check():
     cart_check = yes_no_check(input("Do you already have an active cart? Please input yes or no: "))
 
@@ -20,7 +20,7 @@ def returning_user_check():
             print ("Welcome back " + user_first_name)
             config.z = file_name
 
-# remove existing postage info from cart if returning customer
+# remove pre-existing postage info from cart if returning customer
             tree_cart = ET.parse(config.z)
             root_cart = tree_cart.getroot()
             items = root_cart.find('items')
