@@ -1,0 +1,29 @@
+<user_cart.xml>
+	<customer>
+		<user_first_name>Nic</user_first_name>
+		<user_surname>Springall</user_surname>
+		<user_phone_no>33</user_phone_no>
+		<user_address>ee</user_address>
+		<order_date>2023-05-06</order_date>
+	</customer>
+	<items>
+		<item>
+			<quantity>3</quantity>
+			<prod_code>{'number': '10223'}</prod_code>
+			<name>Product 3</name>
+			<category>tables</category>
+			<price>18.40</price>
+			<stock>5</stock>
+			<weight>5kg</weight>
+		</item>
+		<item>
+			<quantity>1</quantity>
+			<prod_code />
+			<name>standard postage</name>
+			<category />
+			<price>45</price>
+			<stock />
+			<weight />
+		</item>
+	</items>
+</user_cart.xml>

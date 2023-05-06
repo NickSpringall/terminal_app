@@ -48,44 +48,45 @@ def checkout():
             user_phone_no = input("please enter your phone number")
             order_date = date.today()
             user_address = input("please type your street address with the following format (with commas) - \n number street name, suburb, state , postcode \n for example - 110 Street St, West End, QLD, 4000")
-    except FileNotFoundError:
-        print ("you went to checkout with nothing in your cart! ----- exiting the shop, see youn again soon")
-        exit()
+   
 
  # Create dictionary with customer's information
-        for i in ('user_first_name', 'user_surname', 'user_phone_no', 'user_address', 'order_date'):
-            customerdict[i] = locals()[i]
+            for i in ('user_first_name', 'user_surname', 'user_phone_no', 'user_address', 'order_date'):
+                customerdict[i] = locals()[i]
             
             # update new filename to config.y
             config.y = user_first_name.lower() + ("_") + user_surname.lower() + (".xml")
     
-        tree_cart = ET.parse(config.z)
-        root_cart = tree_cart.getroot()
+            tree_cart = ET.parse(config.z)
+            root_cart = tree_cart.getroot()
 
     # write customer info to file
-        if bool(root_cart.findall("customer", namespaces = None)) == True:
-            next
-        else: 
-            customer = ET.Element("customer")
-            root_cart.insert(0, customer) 
-            ET.indent (tree_cart, space = '\t')
+            if bool(root_cart.findall("customer", namespaces = None)) == True:
+                next
+            else: 
+                customer = ET.Element("customer")
+                root_cart.insert(0, customer) 
+                ET.indent (tree_cart, space = '\t')
 
-        customer = root_cart.find("customer")
-        for i, (k, v) in enumerate(customerdict.items()):
-            contact_text = str(v)
-            key_val = str(k)
-            info = ET.SubElement (customer, key_val)
-            info.text = contact_text
-            ET.indent (tree_cart, space = '\t')
-        tree_cart.write(config.z)
+            customer = root_cart.find("customer")
+            for i, (k, v) in enumerate(customerdict.items()):
+                contact_text = str(v)
+                key_val = str(k)
+                info = ET.SubElement (customer, key_val)
+                info.text = contact_text
+                ET.indent (tree_cart, space = '\t')
+            tree_cart.write(config.z)
 
-        file_name = "/Users/nickspringall/Desktop/Coder lessons/terminal_app/" + config.z
-        new_file_name = "/Users/nickspringall/Desktop/Coder lessons/terminal_app/" + config.y
-        os.rename(file_name, new_file_name)
+            file_name = "/Users/nickspringall/Desktop/Coder lessons/terminal_app/" + config.z
+            new_file_name = "/Users/nickspringall/Desktop/Coder lessons/terminal_app/" + config.y
+            os.rename(file_name, new_file_name)
 
-    else:
+        else:
         # need to update file name
-        config.y = config.z
+            config.y = config.z
+    except FileNotFoundError:
+        print ("you went to checkout with nothing in your cart! ----- Exiting the shop, see you again soon")
+        exit()
 
 
 def sub_total(file_name):
