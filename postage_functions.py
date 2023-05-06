@@ -13,16 +13,13 @@ def total_shipping_weight():
 
     total_weight = 0
     for item in root_cart.findall ("./items/item"):
-        print (item[2].text)
 
         weight = item[6].text
         prod_weight = weight
         prod_weight_int = float(re.sub("[^0-9]", "", prod_weight))
-        print(prod_weight_int)
 
         quantity = item[0].text
         prod_quant = int(quantity)
-        print(prod_quant)
 
         total_weight = total_weight + (prod_weight_int * prod_quant)
     

@@ -92,13 +92,12 @@ def sub_total(file_name):
     for item in root_cart.findall ("./items/item"):
         prod_price = item[4].text
         price = prod_price
-        prod_price_float = float(re.sub("[^0-9]", "", price))
+        prod_price_float = float(re.sub("[^0-9.]", "", price))
 
         quantity = item[0].text
         prod_quant = quantity
-
-        total_price = float(total_price) + float(float(prod_price_float) * int(prod_quant))
+        total_price = total_price + (float(prod_price_float) * int(prod_quant))
     
-    print("the subtotal of your order is" + str(total_price))
+    print("the subtotal of your order is $" + str(total_price))
 
     return total_price
