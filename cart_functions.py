@@ -27,14 +27,21 @@ def add_to_cart():
             if new_quant == "search":
                 return
             else: 
-                quantity = int(new_quant)
-            # quantity = input("Sorry, we only have" + str(get_stock_level(selection)) + selection + " in stock\n Please select another quantity or type 'search' to search for another product")
+                    try:
+                        quantity = int(new_quant)
+                    except ValueError:
+                        print("Incorrect input, please seleect from the options below")
+
         else: 
             new_quant = input("Sorry, we only have" + str(get_stock_level(selection)) + selection + "s in stock\n Please select another quantity or type 'search' to search for another product")
             if new_quant == "search":
                 return
             else: 
-                quantity = int(new_quant)
+                try:
+                    quantity = int(new_quant)
+                except ValueError:
+                    print("not a number of search")
+             
 
     # create shopping user_cart.xml file if it doesn't exist
     if file_check(config.z) is False:

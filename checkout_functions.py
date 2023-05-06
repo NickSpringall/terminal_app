@@ -40,14 +40,17 @@ def user_details_already_in_cart():
             return False
 
 def checkout():
-
-    if user_details_already_in_cart() == False:
-        customerdict = {}
-        user_first_name = input("Please enter your first name")
-        user_surname = input("please enter your surname")
-        user_phone_no = input("please enter your phone number")
-        order_date = date.today()
-        user_address = input("please type your street address with the following format (with commas) - \n number street name, suburb, state , postcode \n for example - 110 Street St, West End, QLD, 4000")
+    try:
+        if user_details_already_in_cart() == False:
+            customerdict = {}
+            user_first_name = input("Please enter your first name")
+            user_surname = input("please enter your surname")
+            user_phone_no = input("please enter your phone number")
+            order_date = date.today()
+            user_address = input("please type your street address with the following format (with commas) - \n number street name, suburb, state , postcode \n for example - 110 Street St, West End, QLD, 4000")
+    except FileNotFoundError:
+        print ("you went to checkout with nothing in your cart! ----- exiting the shop, see youn again soon")
+        exit()
 
  # Create dictionary with customer's information
         for i in ('user_first_name', 'user_surname', 'user_phone_no', 'user_address', 'order_date'):
