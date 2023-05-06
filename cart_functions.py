@@ -11,6 +11,7 @@ from tools import file_check, get_stock_level, is_selection_on_database
 from item_display_functions import sort_display_order, product_disp
 from search_functions import prod_search
 from write_prod_to_cart_function import write_prod_to_cart_function
+from exception_functions import yes_no_check
 
 def add_to_cart():
     selection = input("Please type the name of a product from the list above that you would like to order: ")
@@ -19,7 +20,6 @@ def add_to_cart():
         selection = input("Sorry, that is not on the list. \nPlease type the name of a product from the product list you would like to order: ")
 
     quantity = int(input("how many would you like to order? "))
-
 
     while quantity > int(get_stock_level(selection)):
         if int(get_stock_level(selection)) == 1:
@@ -126,7 +126,7 @@ def add_to_cart():
 
 def search_restart():
 
-    next_step = input("would you like to add another product?: ")
+    next_step = yes_no_check(input("would you like to add another product?: "))
     
     if next_step == "yes":
         search_restart_point = input("would you like to view the previous list or see search options again? type 'previous list' or 'options' ")

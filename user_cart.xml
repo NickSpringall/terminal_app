@@ -1,4 +1,5 @@
 <user_cart.xml>
+	<customer />
 	<items>
 		<item>
 			<quantity>22</quantity>
@@ -8,6 +9,15 @@
 			<price>18.40</price>
 			<stock> 50 </stock>
 			<weight>5kg</weight>
+		</item>
+		<item>
+			<quantity>11</quantity>
+			<prod_code>{'number': '10476'}</prod_code>
+			<name>Product 2</name>
+			<category>chairs</category>
+			<price>130.40</price>
+			<stock> 12 </stock>
+			<weight>122kg</weight>
 		</item>
 	</items>
 </user_cart.xml>
