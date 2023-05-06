@@ -55,5 +55,4 @@ def shipping(package_weight):
     }
 
     write_prod_to_cart_function(config.y, postage)
-
     return ship_price
