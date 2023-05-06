@@ -26,6 +26,3 @@ def response_on_list_check(response, list):
             if x.lower() == response.lower():
                 on_list = True
     return response.lower()
-        
-
-    
