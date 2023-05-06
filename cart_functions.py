@@ -14,19 +14,27 @@ from write_prod_to_cart_function import write_prod_to_cart_function
 from exception_functions import yes_no_check
 
 def add_to_cart():
+
     selection = input("Please type the name of a product from the list above that you would like to order: ")
 
     while is_selection_on_database(selection) == None:
         selection = input("Sorry, that is not on the list. \nPlease type the name of a product from the product list you would like to order: ")
-
+    
     quantity = int(input("how many would you like to order? "))
-
     while quantity > int(get_stock_level(selection)):
         if int(get_stock_level(selection)) == 1:
-            quantity = input("Sorry, we only have" + str(get_stock_level(selection)) + selection + " in stock\n Please select another quantity or type 'search' to search for another product")
+            new_quant = input("Sorry, we only have" + str(get_stock_level(selection)) + selection + " in stock\n Please select another quantity or type 'search' to search for another product")
+            if new_quant == "search":
+                return
+            else: 
+                quantity = int(new_quant)
+            # quantity = input("Sorry, we only have" + str(get_stock_level(selection)) + selection + " in stock\n Please select another quantity or type 'search' to search for another product")
         else: 
-            quantity = input("Sorry, we only have" + str(get_stock_level(selection)) + selection + "s in stock\n Please select another quantity or type 'search' to search for another product")
-
+            new_quant = input("Sorry, we only have" + str(get_stock_level(selection)) + selection + "s in stock\n Please select another quantity or type 'search' to search for another product")
+            if new_quant == "search":
+                return
+            else: 
+                quantity = int(new_quant)
 
     # create shopping user_cart.xml file if it doesn't exist
     if file_check(config.z) is False:

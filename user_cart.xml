@@ -19,5 +19,23 @@
 			<stock> 12 </stock>
 			<weight>122kg</weight>
 		</item>
+		<item>
+			<quantity>30</quantity>
+			<prod_code>{'number': '11994'}</prod_code>
+			<name>Product 4</name>
+			<category>lamps</category>
+			<price>43.60</price>
+			<stock> 40 </stock>
+			<weight>8kg</weight>
+		</item>
+		<item>
+			<quantity>42</quantity>
+			<prod_code>{'number': '10223'}</prod_code>
+			<name>Product 3</name>
+			<category>tables</category>
+			<price>18.40</price>
+			<stock> 50 </stock>
+			<weight>5kg</weight>
+		</item>
 	</items>
 </user_cart.xml>

@@ -8,9 +8,6 @@ from operator import itemgetter
 
 def product_disp(list):
 
-    prods = [{
-    }]
-
 # x is list of item numbers
     ls_items_dict = []
     for x in list:
@@ -40,6 +37,7 @@ def add_back_dollar_sign(list):
 
 
 def sort_display_order(list):
+
     while True:
         try:
             order_choice = int(input("how would you like the results to be sorted? \n type the number associated with your choice \n 1 - Highest price first \n 2 - lowest price first \n 3 - alphabetical \n 4 - weight \n 5 - Category \n"))
