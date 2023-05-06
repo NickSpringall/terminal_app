@@ -57,7 +57,6 @@ def sort_display_order(list):
         pprint.pprint(sorted(list, key=itemgetter('name'), reverse=False))
 
     elif order_choice == 4:
-
         ordered_list = (int_order (list, 'weight', False))
         for x in ordered_list:
             x['weight'] = str(x['weight']) + "kg"

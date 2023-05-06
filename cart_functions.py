@@ -90,7 +90,19 @@ def add_to_cart():
 
             if current_stock <= requested_stock:
                 print ("You already have " + str(already_in_cart) + " units of " + str(selection) + " in your cart and there are only " + str(current_stock) + " in stock")
-                quantity = input("would you like to add ")
+                max_extra_units = current_stock - already_in_cart
+                decision = input ("would you still like to purchase extra " + selection + " ?\n Type yes to update your quantity or No to return to search")
+                if decision == "yes":
+                    extra_units = int(input("how many extra units would you like to purchase? (up to " + str(max_extra_units) + ")"))
+                    final_cart_units = (extra_units + already_in_cart)
+                    selection_to_cart ["quantity"] = final_cart_units
+                    for x in items:
+                        for y in x:
+                            if y.text == (selection):
+                                items.remove(x)
+
+                else:
+                    selection_to_cart ["quantity"] = 0
 
             else:
                 for x in items:
