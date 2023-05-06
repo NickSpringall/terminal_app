@@ -1,0 +1,29 @@
+<user_cart.xml>
+	<customer>
+		<user_first_name>nick</user_first_name>
+		<user_surname>springall</user_surname>
+		<user_phone_no>22</user_phone_no>
+		<user_address>22</user_address>
+		<order_date>2023-05-06</order_date>
+	</customer>
+	<items>
+		<item>
+			<quantity>1</quantity>
+			<prod_code>{'number': '10399'}</prod_code>
+			<name>Pff</name>
+			<category>tables</category>
+			<price>$18.50</price>
+			<stock>6</stock>
+			<weight>5kg</weight>
+		</item>
+		<item>
+			<quantity>1</quantity>
+			<prod_code />
+			<name>standard postage</name>
+			<category />
+			<price>15</price>
+			<stock />
+			<weight />
+		</item>
+	</items>
+</user_cart.xml>

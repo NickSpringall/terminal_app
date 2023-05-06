@@ -5,6 +5,7 @@ import re
 from datetime import date
 
 from postage_functions import total_shipping_weight
+from tools import remove_letters_to_float
 import config
 
 def user_details_already_in_cart():
@@ -92,7 +93,7 @@ def sub_total(file_name):
     for item in root_cart.findall ("./items/item"):
         prod_price = item[4].text
         price = prod_price
-        prod_price_float = float(re.sub("[^0-9.]", "", price))
+        prod_price_float = remove_letters_to_float(price)
 
         quantity = item[0].text
         prod_quant = quantity

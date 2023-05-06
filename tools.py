@@ -2,8 +2,6 @@ import os
 import re
 
 import xml.etree.ElementTree as ET
-tree = ET.parse('product_database.xml')
-list_root = tree.getroot()
 
 
 def word_check(str, keyword):
@@ -21,15 +19,19 @@ def file_check(file_name):
 import config
 
 def is_selection_on_database(selection):
-     for prod in list_root:
-            if prod.attrib in config.x:
-                if prod[0].text.lower() == selection.lower():
-                    return True
-                else:
-                    continue
+    tree = ET.parse('product_database.xml')
+    list_root = tree.getroot()  
+    for prod in list_root:
+        if prod.attrib in config.x:
+            if prod[0].text.lower() == selection.lower():
+                return True
+            else:
+                continue
 
 
 def is_keyword_selection_on_database(keyword):
+    tree = ET.parse('product_database.xml')
+    list_root = tree.getroot()
     all_keywords = []
     for prod in list_root:
         word_list = prod[5].text.split()

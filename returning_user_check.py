@@ -1,9 +1,13 @@
 from tools import file_check
+from exception_functions import yes_no_check
 import config
 import xml.etree.ElementTree as ET
 
+
+
 def returning_user_check():
-    cart_check = input("Do you already have an active cart? Please input yes or no: ")
+    cart_check = yes_no_check(input("Do you already have an active cart? Please input yes or no: "))
+
     file_name = "user_cart.xml"
     config.z = file_name
 

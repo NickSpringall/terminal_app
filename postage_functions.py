@@ -3,6 +3,7 @@ import re
 import config
 
 from write_prod_to_cart_function import write_prod_to_cart_function
+from tools import remove_letters_to_float
 
 import xml.etree.ElementTree as ET
 
@@ -16,7 +17,7 @@ def total_shipping_weight():
 
         weight = item[6].text
         prod_weight = weight
-        prod_weight_int = float(re.sub("[^0-9]", "", prod_weight))
+        prod_weight_int = remove_letters_to_float(prod_weight)
 
         quantity = item[0].text
         prod_quant = int(quantity)
