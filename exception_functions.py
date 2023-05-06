@@ -8,10 +8,15 @@ def yes_no_check(response):
 
 
 def no_numeric_chars_check(response):
-    if any(char.isdigit() for char in response) is True:
-        response = input("please only type letters, not numbers")
-    return response
+    if any(char.isdigit() for char in response) is False:
+        new_response = input("please only type letters, not numbers")
+    return new_response
 
+def no_letters_check(response):
+    new_response = response
+    while any(char.isnumeric() for char in new_response) is False:
+        new_response = input("please only type numbers, not letters - ")
+    return new_response
 
 def response_on_list_check(response, list):
     on_list = False
