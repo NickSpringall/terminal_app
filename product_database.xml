@@ -1,44 +1,41 @@
 <items>
-
-    <item number="10273">
-        <name>Zebra</name>
+    <item number="10103">
+        <name>Product 1</name>
         <category>tables</category>
-        <price>$30.23</price>
+        <price>30.40</price>
         <description>this is a table blah blah blah</description>
         <weight>20kg</weight> 
         <keywords>light modern wood table</keywords>
-        <left_in_stock>60</left_in_stock>
+        <left_in_stock> 100 </left_in_stock>
     </item>
 
-    <item number="10399">
-        <name>Pff</name>
-        <category>tables</category>
-        <price>$18.50</price>
-        <description>this is a table blah blah blah</description>
-        <weight>5kg</weight> 
-        <keywords>light modern purple green</keywords>
-        <left_in_stock>10</left_in_stock>
-    </item>
-
-     <item number="11289">
-        <name>aa</name>
-        <category>lamps</category>
-        <price>$43.45</price>
-        <description>this is a table blah blah blah</description>
-        <weight>8kg</weight> 
-        <keywords>light modern pink silver</keywords>
-        <left_in_stock>35</left_in_stock>
-    </item>
-
-    <item number="10239">
-        <name>bc</name>
+     <item number="10476">
+        <name>Product 2</name>
         <category>chairs</category>
-        <price>$130.20</price>
+        <price>130.40</price>
         <description>this is a table blah blah blah</description>
         <weight>122kg</weight> 
         <keywords>light modern purple green</keywords>
-        <left_in_stock>11</left_in_stock>
+        <left_in_stock> 12 </left_in_stock>
     </item>
 
-  
+     <item number="10223">
+        <name>Product 3</name>
+        <category>tables</category>
+        <price>18.40</price>
+        <description>this is a table blah blah blah</description>
+        <weight>5kg</weight> 
+        <keywords>light modern purple green</keywords>
+        <left_in_stock> 50 </left_in_stock>
+    </item>
+
+     <item number="11994">
+        <name>Product 4</name>
+        <category>lamps</category>
+        <price>43.60</price>
+        <description>this is a table blah blah blah</description>
+        <weight>8kg</weight> 
+        <keywords>light modern pink silver</keywords>
+        <left_in_stock> 40 </left_in_stock>
+    </item>
 </items>

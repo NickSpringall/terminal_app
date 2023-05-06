@@ -82,8 +82,7 @@ def add_to_cart():
 # check if item already exists in cart and if sufficient stock is available
     items = root_cart.find("items")
     for x in items:
-        print (x[2].text)
-        if (bool(x[2].text == selection)) is True:
+        if (bool(x[2].text.lower() == selection.lower())) is True:
             already_in_cart = int(x[0].text)
             current_stock = int(get_stock_level(selection))
             requested_stock = (already_in_cart + quantity)
@@ -106,7 +105,7 @@ def add_to_cart():
             else:
                 for x in items:
                     for y in x:
-                        if y.text == (selection):
+                        if y.text.lower() == (selection.lower()):
                             items.remove(x)
                             selection_to_cart["quantity"] = requested_stock
 

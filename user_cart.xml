@@ -1,0 +1,13 @@
+<user_cart.xml>
+	<items>
+		<item>
+			<quantity>22</quantity>
+			<prod_code>{'number': '10223'}</prod_code>
+			<name>Product 3</name>
+			<category>tables</category>
+			<price>18.40</price>
+			<stock> 50 </stock>
+			<weight>5kg</weight>
+		</item>
+	</items>
+</user_cart.xml>
