@@ -1,4 +1,11 @@
 <user_cart.xml>
+	<customer>
+		<user_first_name>Nick</user_first_name>
+		<user_surname>Springall</user_surname>
+		<user_phone_no>333</user_phone_no>
+		<user_address>dd</user_address>
+		<order_date>2023-05-06</order_date>
+	</customer>
 	<items>
 		<item>
 			<quantity>1</quantity>
