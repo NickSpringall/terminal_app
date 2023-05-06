@@ -13,15 +13,14 @@ from search_functions import prod_search
 from write_prod_to_cart_function import write_prod_to_cart_function
 
 def add_to_cart():
-    selection = input("Please type the name of the product you would like to order: ")
+    selection = input("Please type the name of a product from the list above that you would like to order: ")
 
-    if is_selection_on_database(selection) == None:
-        selection = input("Please type the name of a product from the product list you would like to order: ")
+    while is_selection_on_database(selection) == None:
+        selection = input("Sorry, that is not on the list. \nPlease type the name of a product from the product list you would like to order: ")
 
     quantity = int(input("how many would you like to order? "))
 
-# use TypeError catching to send back to search maybe have it so user can quit, show cart or checkout at any time? 
-            # FIX OUTPUT INT OR STR FOR COMPARISON 
+
     while quantity > int(get_stock_level(selection)):
         if int(get_stock_level(selection)) == 1:
             quantity = input("Sorry, we only have" + str(get_stock_level(selection)) + selection + " in stock\n Please select another quantity or type 'search' to search for another product")
@@ -83,7 +82,8 @@ def add_to_cart():
 # check if item already exists in cart and if sufficient stock is available
     items = root_cart.find("items")
     for x in items:
-        if bool(x[2].text == selection) is True:
+        print (x[2].text)
+        if (bool(x[2].text == selection)) is True:
             already_in_cart = int(x[0].text)
             current_stock = int(get_stock_level(selection))
             requested_stock = (already_in_cart + quantity)
@@ -100,7 +100,6 @@ def add_to_cart():
                         for y in x:
                             if y.text == (selection):
                                 items.remove(x)
-
                 else:
                     selection_to_cart ["quantity"] = 0
 
@@ -132,8 +131,6 @@ def search_restart():
     
     if next_step == "yes":
         search_restart_point = input("would you like to view the previous list or see search options again? type 'previous list' or 'options' ")
-        # if search_restart_point == "previous list":
-        #     sort_display_order(product_disp(config.x))
         if search_restart_point == "options":
             return "restart", []
         if search_restart_point == "previous list":
