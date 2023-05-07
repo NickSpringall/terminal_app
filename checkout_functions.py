@@ -1,13 +1,11 @@
 import os
 import xml.etree.ElementTree as ET
-import re
-
 from datetime import date
+import config
 
-from postage_functions import total_shipping_weight
 from tools import remove_letters_to_float, get_address
 from exception_functions import yes_no_check
-import config
+
 
 def user_details_already_in_cart():
     tree_cart = ET.parse(config.z)

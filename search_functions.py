@@ -2,15 +2,15 @@ import xml.etree.ElementTree as ET
 tree = ET.parse('product_database.xml')
 root = tree.getroot()
 
-from quit_view_checkout_function import listen_for_quit_view_checkout
 from tools import word_check, is_keyword_selection_on_database
-from exception_functions import no_numeric_chars_check, response_on_list_check
+from exception_functions import response_on_list_check
+import config
 
 prod_num_list = []
-import config
 config.x = prod_num_list
 
 def disp_category():
+
     cat_list = []
     for item in root:
         for x in item.findall('category'):
@@ -32,9 +32,12 @@ def disp_category():
     return (prod_num_list)
 
 def disp_keyword():
+    prod_num_list = None
     user_keyword = input("Please type in a keyword to search:\n")
-    while is_keyword_selection_on_database(user_keyword) is None:
-        user_keyword = input("Sorry, that keyword returned no results, please type in another keyword to search:\n")
+    while is_keyword_selection_on_database(user_keyword) == None:
+        user_keyword = input("Sorry, that keyword returned no results, please type in another keyword to search or 'search' to search another way:\n")
+        if user_keyword == "search" or user_keyword == "Search":
+            return "search_again"
 
     for item in root:
         for x in item.findall('keywords'):
@@ -52,9 +55,11 @@ def disp_full():
 
 
 def prod_search(prod_num_list):
-        if prod_num_list != []:
-            return (prod_num_list)
-        
+    if prod_num_list != []:
+        return (prod_num_list)
+    
+    prod_num_list = "search_again"
+    while prod_num_list == "search_again":
         cat_options = ("Category", "Keyword", "Full")
         search_term = response_on_list_check(input ("Would you like to search by Catergory, Keyword or Full list? (Type Category, Keyword or Full):  "), cat_options)
 
@@ -63,8 +68,8 @@ def prod_search(prod_num_list):
                 
         if search_term == "keyword":
             prod_num_list = disp_keyword()
-
+                
         if search_term == "full":
             prod_num_list = disp_full()
 
-        return (prod_num_list)
+    return (prod_num_list)

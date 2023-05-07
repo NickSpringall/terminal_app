@@ -1,7 +1,5 @@
 from os import path
-import os
 import re
-from colored import fg, bg, attr
 from pathlib import Path
 
 

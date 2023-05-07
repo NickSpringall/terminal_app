@@ -1,6 +1,4 @@
 from xml.dom import minidom 
-import os
-import pprint 
 import config
 
 import xml.etree.ElementTree as ET
@@ -8,13 +6,10 @@ tree = ET.parse('product_database.xml')
 list_root = tree.getroot()
 
 from tools import file_check, get_stock_level, is_selection_on_database
-from item_display_functions import sort_display_order, product_disp
-from search_functions import prod_search
-from write_prod_to_cart_function import write_prod_to_cart
-from exception_functions import yes_no_check, no_numeric_chars_check, no_letters_check, response_on_list_check
+from exception_functions import yes_no_check, no_letters_check, response_on_list_check
+
 
 def add_to_cart():
-
     selection = input("Please type the name of a product from the list above that you would like to order:  ")
 
     while is_selection_on_database(selection) == None:
@@ -33,6 +28,8 @@ def add_to_cart():
                         quantity = int(new_quant)
                     except ValueError:
                         print("Incorrect input, please seleect from the options below"  )
+                    except:
+                        print("apologies, something went wrong")
 
         else: 
             new_quant = input("Sorry, we only have " + str(get_stock_level(selection)) + selection + "s in stock\n Please select another quantity or type 'search' to search for another product:"  )
@@ -43,7 +40,8 @@ def add_to_cart():
                     quantity = int(new_quant)
                 except ValueError:
                     print("not a number or 'search'")
-             
+                except:
+                    print("apologies, something went wrong")
 
     # create shopping user_cart.xml file if it doesn't exist
     if file_check(config.z) is False:
@@ -107,7 +105,7 @@ def add_to_cart():
             if current_stock <= requested_stock:
                 print ("You already have " + str(already_in_cart) + " units of " + str(selection) + " in your cart and there are only " + str(current_stock) + " in stock")
                 max_extra_units = current_stock - already_in_cart
-                decision = input ("would you still like to purchase extra " + selection + " ?\n Type yes to update your quantity or No to return to search")
+                decision = input ("would you still like to purchase extra " + selection + " ?\n Type 'yes' to update your quantity or 'no' to return to search  ")
                 if decision == "yes":
                     extra_units = int(input("how many extra units would you like to purchase? (up to " + str(max_extra_units) + "):  "))
                     final_cart_units = (extra_units + already_in_cart)

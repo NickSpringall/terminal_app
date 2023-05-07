@@ -1,5 +1,3 @@
-
-import re
 import config
 
 from write_prod_to_cart_function import write_prod_to_cart
