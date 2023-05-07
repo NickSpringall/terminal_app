@@ -1,9 +1,15 @@
 from os import path
+import os
 import re
 from pathlib import Path
 
 
+import config
 import xml.etree.ElementTree as ET
+
+def remove_abandoned_user_cart():
+    if file_check("user_cart.xml") is True:
+        os.remove("user_cart.xml")
 
 
 def word_check(str, keyword):
@@ -15,10 +21,9 @@ def word_check(str, keyword):
     
 
 def file_check(file_name):
-    exists = path.exists(file_name)
-    return exists
+    address = path.exists(file_name)
+    return address
 
-import config
 
 
 def get_address():

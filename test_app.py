@@ -65,7 +65,6 @@ def test_write_prod_to_cart():
 
 # Test reads weight and quantity information from an xml and calculates the total weight, returning an integer
 # first test case tests against file of identical format to the cart, second test case tests with different/random tag values and other non-numerical values
-
 def test_total_shipping_weight():
     weight = total_shipping_weight("weight_test_1.xml")
     weight_2 = total_shipping_weight("weight_test_2.xml")

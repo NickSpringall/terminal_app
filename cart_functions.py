@@ -17,10 +17,13 @@ def add_to_cart():
     
     quantity = no_letters_check(input("how many would you like to order?:  "))
     quantity = int(quantity)
+    if quantity <= 0:
+        print("quantity must be more than 0 to add to cart!")
+        return
 
     while quantity > int(get_stock_level(selection)):
         if int(get_stock_level(selection)) == 1:
-            new_quant = input("Sorry, we only have " + str(get_stock_level(selection)) + selection + " in stock\n Please select another quantity or type 'search' to search for another product:"  )
+            new_quant = input("Sorry, we only have " + str(get_stock_level(selection)) + selection + " in stock\n Please select another quantity or type 'search' to search for another product:  ")
             if new_quant == "search":
                 return
             else: 
@@ -32,7 +35,7 @@ def add_to_cart():
                         print("apologies, something went wrong")
 
         else: 
-            new_quant = input("Sorry, we only have " + str(get_stock_level(selection)) + selection + "s in stock\n Please select another quantity or type 'search' to search for another product:"  )
+            new_quant = input("Sorry, we only have " + str(get_stock_level(selection)) + " " + selection + "s in stock\n Please select another quantity or type 'search' to search for another product:  ")
             if new_quant == "search":
                 return
             else: 
@@ -102,6 +105,10 @@ def add_to_cart():
             current_stock = int(get_stock_level(selection))
             requested_stock = (already_in_cart + quantity)
 
+            if already_in_cart == current_stock:
+                print ("you already have all " + str(current_stock) + " " + selection + "'s available in your cart")
+                return
+            
             if current_stock <= requested_stock:
                 print ("You already have " + str(already_in_cart) + " units of " + str(selection) + " in your cart and there are only " + str(current_stock) + " in stock")
                 max_extra_units = current_stock - already_in_cart
@@ -140,7 +147,6 @@ def add_to_cart():
 
 
 def search_restart():
-
     next_step = yes_no_check(input("would you like to add another product?:  "))
     options = ("options", "previous list")
     if next_step == "yes":

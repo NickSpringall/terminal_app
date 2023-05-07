@@ -1,4 +1,4 @@
-from tools import file_check
+from tools import file_check, remove_abandoned_user_cart
 from exception_functions import yes_no_check
 
 import config
@@ -31,9 +31,11 @@ def returning_user_check():
                         items.remove(x)
                         tree_cart.write(config.z)
 
-            return file_name
+            return
         else:
             print ("I'm sorry, we don't seem to have an active cart for you, please continue to create a new one")
-            return file_name
+            remove_abandoned_user_cart()
+            return
     else:
+        remove_abandoned_user_cart()
         return 
