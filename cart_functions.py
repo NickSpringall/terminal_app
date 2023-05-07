@@ -25,7 +25,7 @@ def add_to_cart():
 
     while quantity > int(get_stock_level(selection)):
         if int(get_stock_level(selection)) == 1:
-            new_quant = input("Sorry, we only have" + str(get_stock_level(selection)) + selection + " in stock\n Please select another quantity or type 'search' to search for another product:"  )
+            new_quant = input("Sorry, we only have " + str(get_stock_level(selection)) + selection + " in stock\n Please select another quantity or type 'search' to search for another product:"  )
             if new_quant == "search":
                 return
             else: 
@@ -35,7 +35,7 @@ def add_to_cart():
                         print("Incorrect input, please seleect from the options below"  )
 
         else: 
-            new_quant = input("Sorry, we only have" + str(get_stock_level(selection)) + selection + "s in stock\n Please select another quantity or type 'search' to search for another product:"  )
+            new_quant = input("Sorry, we only have " + str(get_stock_level(selection)) + selection + "s in stock\n Please select another quantity or type 'search' to search for another product:"  )
             if new_quant == "search":
                 return
             else: 
