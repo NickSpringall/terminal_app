@@ -1,5 +1,9 @@
+from os import path
 import os
 import re
+from colored import fg, bg, attr
+from pathlib import Path
+
 
 import xml.etree.ElementTree as ET
 
@@ -13,10 +17,16 @@ def word_check(str, keyword):
     
 
 def file_check(file_name):
-    exists = os.path.isfile("/Users/nickspringall/Desktop/Coder lessons/terminal_app/" + file_name)
+    exists = path.exists(file_name)
     return exists
 
 import config
+
+
+def get_address():
+    cwd = Path().absolute()
+    return cwd
+
 
 def is_selection_on_database(selection):
     tree = ET.parse('product_database.xml')
@@ -53,6 +63,7 @@ def get_stock_level(item):
                          stock = sub.text
     return stock
 
+
 def update_product_list(product, quantity):
 
     tree = ET.parse('product_database.xml')
@@ -63,6 +74,7 @@ def update_product_list(product, quantity):
             original_quant = item[6].text
             item[6].text = str(int(original_quant) - int(quantity))
     tree.write("product_database.xml")
+
 
 def remove_letters_to_float(string):
     return float(re.sub("[^0-9.]", "", string))

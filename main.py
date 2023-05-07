@@ -6,10 +6,11 @@ from postage_functions import shipping, total_shipping_weight
 from order_summary_functions import order_summary
 from returning_user_check import returning_user_check
 import config
-
+from tools import get_address
 
 print("Welcome to the shop!! Follow instructions to navigate through the catalogue and cart functions.\n At anytime you can type --- \n      'quit' to exit\n      'cart' to view cart\n      'checkout' to complete checkout")
 
+print(get_address())
 
 returning_user_check()
 

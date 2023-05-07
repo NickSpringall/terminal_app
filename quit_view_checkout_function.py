@@ -10,6 +10,7 @@ def listen_for_quit_view_checkout(input):
     if input == "quit":
         print("Thankyou for visiting the shop, we hope to see you again soon.")
         exit()
+        
     if input == "view cart":
         tree_cart = ET.parse(config.z)
         root_cart = tree_cart.getroot()

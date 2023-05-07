@@ -5,7 +5,7 @@ import re
 from datetime import date
 
 from postage_functions import total_shipping_weight
-from tools import remove_letters_to_float
+from tools import remove_letters_to_float, get_address
 import config
 
 def user_details_already_in_cart():
@@ -34,9 +34,6 @@ def user_details_already_in_cart():
         else:
             root_cart.remove(customer)
             tree_cart.write(config.z)
-            # for x in customer:
-            #     customer.remove(x)
-            # tree_cart.write(config.z)
             return False
 
 def checkout():
@@ -67,8 +64,8 @@ def checkout():
                 customer = ET.Element("customer")
                 root_cart.insert(0, customer) 
                 ET.indent (tree_cart, space = '\t')
-
             customer = root_cart.find("customer")
+
             for i, (k, v) in enumerate(customerdict.items()):
                 contact_text = str(v)
                 key_val = str(k)
@@ -77,13 +74,15 @@ def checkout():
                 ET.indent (tree_cart, space = '\t')
             tree_cart.write(config.z)
 
-            file_name = "/Users/nickspringall/Desktop/Coder lessons/terminal_app/" + config.z
-            new_file_name = "/Users/nickspringall/Desktop/Coder lessons/terminal_app/" + config.y
+            file_name = str(get_address()) + "/" + config.z
+            print (file_name)
+            new_file_name = str(get_address()) + "/" + config.y
+            print (new_file_name)
             os.rename(file_name, new_file_name)
 
         else:
-        # need to update file name
             config.y = config.z
+
     except FileNotFoundError:
         print ("you went to checkout with nothing in your cart! ----- Exiting the shop, see you again soon")
         exit()

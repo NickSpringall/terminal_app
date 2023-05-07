@@ -1,0 +1,29 @@
+<user_cart.xml>
+	<customer>
+		<user_first_name>nick</user_first_name>
+		<user_surname>springall</user_surname>
+		<user_phone_no>aa</user_phone_no>
+		<user_address>aa</user_address>
+		<order_date>2023-05-07</order_date>
+	</customer>
+	<items>
+		<item>
+			<quantity>8</quantity>
+			<prod_code>{'number': '11994'}</prod_code>
+			<name>Product 4</name>
+			<category>lamps</category>
+			<price>43.60</price>
+			<stock>38</stock>
+			<weight>8kg</weight>
+		</item>
+		<item>
+			<quantity>1</quantity>
+			<prod_code />
+			<name>standard postage</name>
+			<category />
+			<price>192</price>
+			<stock />
+			<weight />
+		</item>
+	</items>
+</user_cart.xml>

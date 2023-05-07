@@ -22,7 +22,7 @@ def add_to_cart():
     
     quantity = no_letters_check(input("how many would you like to order? "))
     quantity = int(quantity)
-    
+
     while quantity > int(get_stock_level(selection)):
         if int(get_stock_level(selection)) == 1:
             new_quant = input("Sorry, we only have" + str(get_stock_level(selection)) + selection + " in stock\n Please select another quantity or type 'search' to search for another product")
@@ -42,7 +42,7 @@ def add_to_cart():
                 try:
                     quantity = int(new_quant)
                 except ValueError:
-                    print("not a number of search")
+                    print("not a number or 'search'")
              
 
     # create shopping user_cart.xml file if it doesn't exist

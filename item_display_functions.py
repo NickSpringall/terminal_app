@@ -69,5 +69,3 @@ def sort_display_order(list):
      
     else:
         pprint.pprint(sorted(list, key=lambda d: d['category'], reverse=False))
-
-    

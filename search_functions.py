@@ -21,9 +21,10 @@ def disp_category():
 
     print ("Please select from the following categories")
     print (cat_list)
-    print (type(cat_list))
+    # cat_choice = input("Choice: ")
 
-    cat_choice = response_on_list_check(input("Choice: "), cat_list)
+    cat_choice = no_numeric_chars_check(input("Choice: "))
+
 
     for item in root:
         for x in item.findall('category'):
