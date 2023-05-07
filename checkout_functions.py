@@ -76,9 +76,7 @@ def checkout():
             tree_cart.write(config.z)
 
             file_name = str(get_address()) + "/" + config.z
-            print (file_name)
             new_file_name = str(get_address()) + "/" + config.y
-            print (new_file_name)
             os.rename(file_name, new_file_name)
 
         else:

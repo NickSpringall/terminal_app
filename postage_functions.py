@@ -2,28 +2,31 @@
 import re
 import config
 
-from write_prod_to_cart_function import write_prod_to_cart_function
+from write_prod_to_cart_function import write_prod_to_cart
 from tools import remove_letters_to_float
 
 import xml.etree.ElementTree as ET
 
-def total_shipping_weight():
+def total_shipping_weight(file_name):
         
-    tree_cart = ET.parse(config.y)
+    tree_cart = ET.parse(file_name)
     root_cart = tree_cart.getroot()
 
     total_weight = 0
     for item in root_cart.findall ("./items/item"):
+        for x in item:
+            if x.tag == "weight":
+                weight = x.text
+                prod_weight = weight
+                prod_weight_int = remove_letters_to_float(prod_weight)
+                
+                for x in item:
+                    if x.tag == "quantity":
+                        quantity = x.text
+                        prod_quant = int(quantity)
 
-        weight = item[6].text
-        prod_weight = weight
-        prod_weight_int = remove_letters_to_float(prod_weight)
-
-        quantity = item[0].text
-        prod_quant = int(quantity)
-
-        total_weight = total_weight + (prod_weight_int * prod_quant)
-    
+                        total_weight = total_weight + (prod_weight_int * prod_quant)
+    print (total_weight)
     return total_weight
 
 
@@ -54,5 +57,5 @@ def shipping(package_weight):
         "weight": ""
     }
 
-    write_prod_to_cart_function(config.y, postage)
+    write_prod_to_cart(config.y, postage)
     return ship_price

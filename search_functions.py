@@ -52,6 +52,9 @@ def disp_full():
 
 
 def prod_search(prod_num_list):
+        if prod_num_list != []:
+            return (prod_num_list)
+        
         cat_options = ("Category", "Keyword", "Full")
         search_term = response_on_list_check(input ("Would you like to search by Catergory, Keyword or Full list? (Type Category, Keyword or Full):  "), cat_options)
 

@@ -26,6 +26,6 @@ while restart == "restart":
 checkout()
 
 sub = sub_total(config.y)
-ship = shipping(total_shipping_weight())
+ship = shipping(total_shipping_weight(config.y))
 
 order_summary(sub, ship, config.y)

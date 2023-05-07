@@ -1,10 +1,12 @@
 from write_prod_to_cart_function import write_prod_to_cart
-from tools import get_address
+from postage_functions import total_shipping_weight
 import xml.etree.ElementTree as ET
 
 
 # test writes a dictionary to a test xml file with write_prod_to_cart function and copies back the results to another dictionary
-# If original and read back dictionaries are identical the test passes
+# If original dict and read back dict are identical the test passes
+
+# second test case checks result for different sized and formatted dictionary compared to what is used in the program
 
 def test_write_prod_to_cart():
        
@@ -61,4 +63,11 @@ def test_write_prod_to_cart():
 
     assert selection_to_cart == check_file_1
     assert selection_2_to_cart == check_file_2
+
+
+
+def test_total_shipping_weight():
+    weight = int(total_shipping_weight("weight_test_cart.xml"))
+
+    assert weight == 30
 

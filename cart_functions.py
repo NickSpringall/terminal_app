@@ -10,8 +10,8 @@ list_root = tree.getroot()
 from tools import file_check, get_stock_level, is_selection_on_database
 from item_display_functions import sort_display_order, product_disp
 from search_functions import prod_search
-from write_prod_to_cart_function import write_prod_to_cart_function
-from exception_functions import yes_no_check, no_numeric_chars_check, no_letters_check
+from write_prod_to_cart_function import write_prod_to_cart
+from exception_functions import yes_no_check, no_numeric_chars_check, no_letters_check, response_on_list_check
 
 def add_to_cart():
 
@@ -144,9 +144,9 @@ def add_to_cart():
 def search_restart():
 
     next_step = yes_no_check(input("would you like to add another product?:  "))
-    
+    options = ("options", "previous list")
     if next_step == "yes":
-        search_restart_point = input("would you like to view the previous list or see search options again? type 'previous list' or 'options':  ")
+        search_restart_point = response_on_list_check(input("would you like to view the previous list or see search options again? type 'previous list' or 'options':  "), options)
         if search_restart_point == "options":
             return "restart", []
         if search_restart_point == "previous list":
