@@ -5,9 +5,7 @@ import xml.etree.ElementTree as ET
 
 # test writes a dictionary to a test xml file with write_prod_to_cart function and copies back the results to another dictionary
 # If original dict and read back dict are identical the test passes
-
 # second test case checks result for different sized and formatted dictionary compared to what is used in the program
-
 def test_write_prod_to_cart():
        
     quantity = "10"
@@ -65,9 +63,12 @@ def test_write_prod_to_cart():
     assert selection_2_to_cart == check_file_2
 
 
+# Test reads weight and quantity information from an xml and calculates the total weight, returning an integer
+# first test case tests against file of identical format to the cart, second test case tests with different/random tag values and other non-numerical values
 
 def test_total_shipping_weight():
-    weight = int(total_shipping_weight("weight_test_cart.xml"))
+    weight = total_shipping_weight("weight_test_1.xml")
+    weight_2 = total_shipping_weight("weight_test_2.xml")
 
     assert weight == 30
-
+    assert weight_2 == 1220

@@ -1,0 +1,17 @@
+<user_cart>
+    <items>
+        <item>
+        <quantity>3</quantity>
+            <something>123</something>
+            <somethingelse>456</somethingelse>
+            <test>hello</test>
+            <weight>300 horses</weight>
+        </item>
+        <item>
+            <test1>helloworld</test1>
+            <quantity>10</quantity>
+            <test2>2039</test2>
+            <weight>$32</weight>
+        </item>
+    </items>
+</user_cart>
