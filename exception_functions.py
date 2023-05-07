@@ -23,6 +23,7 @@ def response_on_list_check(response, list):
 
     for x in list:
         if x.lower() == response.lower():
+            response = response.lower()
             return response
 
     while on_list is False:
@@ -30,4 +31,5 @@ def response_on_list_check(response, list):
         for x in list:
             if x.lower() == response.lower():
                 on_list = True
-    return response.lower()
+        response = response.lower()
+    return response

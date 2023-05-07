@@ -10,8 +10,6 @@ from tools import get_address
 
 print("Welcome to the shop!! Follow instructions to navigate through the catalogue and cart functions.\n At anytime you can type --- \n      'quit' to exit\n      'cart' to view cart\n      'checkout' to complete checkout")
 
-print(get_address())
-
 returning_user_check()
 
 restart = "restart"
