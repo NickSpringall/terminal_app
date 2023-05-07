@@ -1,22 +1,5 @@
 <user_cart>
 	<items>
-		<item>
-			<quantity>10</quantity>
-			<prod_code>1234</prod_code>
-			<name>test_product</name>
-			<category>test</category>
-			<price>$1,000,000</price>
-			<stock>20</stock>
-			<weight>50kg</weight>
-		</item>
-		<item>
-			<quantity>10</quantity>
-			<prod_code>1234</prod_code>
-			<name>test_product</name>
-			<category>test</category>
-			<price>$1,000,000</price>
-			<stock>20</stock>
-			<weight>50kg</weight>
-		</item>
+	
 	</items>
 </user_cart>

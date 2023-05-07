@@ -1,6 +1,6 @@
 import xml.etree.ElementTree as ET
 
-def write_prod_to_cart_function(file_name, dict_name):
+def write_prod_to_cart(file_name, dict_name):
     tree_cart = ET.parse(file_name)
     root_cart = tree_cart.getroot()
 
