@@ -12,7 +12,7 @@ def order_summary(sub, ship, file_name):
     
     print("Your order total is $" + str(order_total))
 
-    print("your order summary is - ") 
+    print("Your order summary is - ") 
     for item in root_cart.findall ("./items/item"):
         name = item[2].text
         price = item[4].text
@@ -21,7 +21,7 @@ def order_summary(sub, ship, file_name):
 
         print("Product --" + str(name) + " ||  price/unit -- $" + str(price) + "||  quantity --" + str(quantity) + "||  sub total $" + str((price) * int(quantity)))
 
-        proceed = input("would you like to proceed with order of save cart for later? \n Please type 'proceed' or 'save'")
+        proceed = input("Would you like to proceed with order of save cart for later? \n Please type 'proceed' or 'save':  ")
         if proceed == "proceed":
             update_product_list(name, quantity)
             file_name = str(get_address()) + "/" + config.y

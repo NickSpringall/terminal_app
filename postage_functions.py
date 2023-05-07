@@ -34,10 +34,10 @@ def shipping(package_weight):
     express_ship = express_ship_per_kg * int(package_weight)
     standard_ship = standard_ship_per_kg * int(package_weight)
 
-    print("shipping options \n Standard 7 day shipping is $" + str(standard_ship) + "\n Next day express shipping is $" + str(express_ship))
+    print("Shipping options \n Standard 7 day shipping is $" + str(standard_ship) + "\n Next day express shipping is $" + str(express_ship))
     ship_method = ""
     while ship_method.lower() != "express" and ship_method != "standard":
-        ship_method = input("Which method would you like? please type express or standard: ")
+        ship_method = input("Which method would you like? please type express or standard:  ")
 
     if ship_method.lower() == "express":
         ship_price = express_ship

@@ -6,6 +6,7 @@ from datetime import date
 
 from postage_functions import total_shipping_weight
 from tools import remove_letters_to_float, get_address
+from exception_functions import yes_no_check
 import config
 
 def user_details_already_in_cart():
@@ -28,7 +29,7 @@ def user_details_already_in_cart():
     else:
         for x in customer:
             print (x.tag + "----" + x.text)
-        current_details_correct = input("are these still your current details? please type 'yes' or 'no'")
+        current_details_correct = yes_no_check(input("Are these still your current details? please type 'yes' or 'no':  "))
         if  current_details_correct == "yes":
             return True
         else:
@@ -40,11 +41,11 @@ def checkout():
     try:
         if user_details_already_in_cart() == False:
             customerdict = {}
-            user_first_name = input("Please enter your first name")
-            user_surname = input("please enter your surname")
-            user_phone_no = input("please enter your phone number")
+            user_first_name = input("Please enter your first name:  ")
+            user_surname = input("Please enter your surname:  ")
+            user_phone_no = input("Please enter your phone number:  ")
             order_date = date.today()
-            user_address = input("please type your street address with the following format (with commas) - \n number street name, suburb, state , postcode \n for example - 110 Street St, West End, QLD, 4000")
+            user_address = input("Please type your street address with the following format (with commas) - \n number street name, suburb, state , postcode \n for example - 110 Street St, West End, QLD, 4000:"  )
    
 
  # Create dictionary with customer's information
@@ -84,7 +85,7 @@ def checkout():
             config.y = config.z
 
     except FileNotFoundError:
-        print ("you went to checkout with nothing in your cart! ----- Exiting the shop, see you again soon")
+        print ("You went to checkout with nothing in your cart! ----- Exiting the shop, see you again soon")
         exit()
 
 
@@ -102,6 +103,6 @@ def sub_total(file_name):
         prod_quant = quantity
         total_price = total_price + (float(prod_price_float) * int(prod_quant))
     
-    print("the subtotal of your order is $" + str(total_price))
+    print("The subtotal of your order is $" + str(total_price))
 
     return total_price

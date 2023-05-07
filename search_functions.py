@@ -19,11 +19,11 @@ def disp_category():
             else:
                 continue
 
-    print ("Please select from the following categories")
+    print ("Please select from the following categories -")
     print (cat_list)
     # cat_choice = input("Choice: ")
 
-    cat_choice = no_numeric_chars_check(input("Choice: "))
+    cat_choice = no_numeric_chars_check(input("Choice:  "))
 
 
     for item in root:
@@ -36,7 +36,7 @@ def disp_category():
 
 
 def disp_keyword():
-    user_keyword = input("please type in a keyword to search:\n")
+    user_keyword = input("Please type in a keyword to search:\n")
     while is_keyword_selection_on_database(user_keyword) is None:
         user_keyword = input("Sorry, that keyword returned no results, please type in another keyword to search:\n")
 
@@ -60,7 +60,7 @@ def prod_search(prod_list):
         return prod_list
     else:
         cat_options = ("Category", "Keyword", "Full")
-        search_term = response_on_list_check (input ("Would you like to search by Catergory, Keyword or Full list? (Type Category, Keyword or Full): "), cat_options)
+        search_term = response_on_list_check (input ("Would you like to search by Catergory, Keyword or Full list? (Type Category, Keyword or Full):  "), cat_options)
 
         if search_term == "category":
             prod_num_list = disp_category()

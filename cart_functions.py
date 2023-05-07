@@ -15,27 +15,27 @@ from exception_functions import yes_no_check, no_numeric_chars_check, no_letters
 
 def add_to_cart():
 
-    selection = input("Please type the name of a product from the list above that you would like to order: ")
+    selection = input("Please type the name of a product from the list above that you would like to order:  ")
 
     while is_selection_on_database(selection) == None:
-        selection = input("Sorry, that is not on the list. \nPlease type the name of a product from the product list you would like to order: ")
+        selection = input("Sorry, that is not on the list. \nPlease type the name of a product from the product list you would like to order:  ")
     
-    quantity = no_letters_check(input("how many would you like to order? "))
+    quantity = no_letters_check(input("how many would you like to order?:  "))
     quantity = int(quantity)
 
     while quantity > int(get_stock_level(selection)):
         if int(get_stock_level(selection)) == 1:
-            new_quant = input("Sorry, we only have" + str(get_stock_level(selection)) + selection + " in stock\n Please select another quantity or type 'search' to search for another product")
+            new_quant = input("Sorry, we only have" + str(get_stock_level(selection)) + selection + " in stock\n Please select another quantity or type 'search' to search for another product:"  )
             if new_quant == "search":
                 return
             else: 
                     try:
                         quantity = int(new_quant)
                     except ValueError:
-                        print("Incorrect input, please seleect from the options below")
+                        print("Incorrect input, please seleect from the options below"  )
 
         else: 
-            new_quant = input("Sorry, we only have" + str(get_stock_level(selection)) + selection + "s in stock\n Please select another quantity or type 'search' to search for another product")
+            new_quant = input("Sorry, we only have" + str(get_stock_level(selection)) + selection + "s in stock\n Please select another quantity or type 'search' to search for another product:"  )
             if new_quant == "search":
                 return
             else: 
@@ -109,7 +109,7 @@ def add_to_cart():
                 max_extra_units = current_stock - already_in_cart
                 decision = input ("would you still like to purchase extra " + selection + " ?\n Type yes to update your quantity or No to return to search")
                 if decision == "yes":
-                    extra_units = int(input("how many extra units would you like to purchase? (up to " + str(max_extra_units) + ")"))
+                    extra_units = int(input("how many extra units would you like to purchase? (up to " + str(max_extra_units) + "):  "))
                     final_cart_units = (extra_units + already_in_cart)
                     selection_to_cart ["quantity"] = final_cart_units
                     for x in items:
@@ -143,10 +143,10 @@ def add_to_cart():
 
 def search_restart():
 
-    next_step = yes_no_check(input("would you like to add another product?: "))
+    next_step = yes_no_check(input("would you like to add another product?:  "))
     
     if next_step == "yes":
-        search_restart_point = input("would you like to view the previous list or see search options again? type 'previous list' or 'options' ")
+        search_restart_point = input("would you like to view the previous list or see search options again? type 'previous list' or 'options':  ")
         if search_restart_point == "options":
             return "restart", []
         if search_restart_point == "previous list":

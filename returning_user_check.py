@@ -6,14 +6,14 @@ import xml.etree.ElementTree as ET
 
 # asks user if they already have a cart and if so to input their name. Checks name against carts on file and creates new cart if no cart found belonging to user"
 def returning_user_check():
-    cart_check = yes_no_check(input("Do you already have an active cart? Please input yes or no: "))
+    cart_check = yes_no_check(input("Do you already have an active cart? Please input yes or no:  "))
 
     file_name = "user_cart.xml"
     config.z = file_name
 
     if cart_check == "yes":
-        user_first_name = input("please type your first name: ")
-        user_surname = input("please type your surname: ")
+        user_first_name = input("Please type your first name:  ")
+        user_surname = input("Please type your surname:  ")
         
         if file_check(user_first_name + "_" + user_surname + ".xml") == True:
             file_name = user_first_name + "_" + user_surname + ".xml"
