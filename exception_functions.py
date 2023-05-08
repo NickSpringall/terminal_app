@@ -13,9 +13,9 @@ def no_numeric_chars_check(response):
     return new_response
 
 def no_letters_check(response):
-    answer = response.isnumeric()
-    if answer is True:
-        return answer
+    check = response.isnumeric()
+    if check is True:
+        return response
     new_response = response
     while new_response.isnumeric() is False:
         new_response = input("Please only type numbers, not letters:  ")

@@ -15,7 +15,7 @@ def add_to_cart():
     while is_selection_on_database(selection) == None:
         selection = input("Sorry, that is not on the list. \nPlease type the name of a product from the product list you would like to order:  ")
 
-    quantity = int(no_letters_check(input("how many would you like to order?:  ")))
+    quantity = int(no_letters_check((input("how many would you like to order?:  "))))
     # quantity = int(quantity)
     if quantity <= 0:
         print("quantity must be more than 0 to add to cart!")
@@ -114,11 +114,11 @@ def add_to_cart():
                 max_extra_units = current_stock - already_in_cart
                 decision = yes_no_check(input("would you still like to purchase extra " + selection + " ?\n Type 'yes' to update your quantity or 'no' to return to search  "))
                 if decision == "yes":
-                    extra_units = no_letters_check(int(input("how many extra units would you like to purchase? (up to " + str(max_extra_units) + "):  ")))
+                    extra_units = int(no_letters_check(input("how many extra units would you like to purchase? (up to " + str(max_extra_units) + "):  ")))
                     if extra_units <= 0:
                         return
                     while extra_units > max_extra_units:
-                        extra_units = no_letters_check(int(input("Please enter " + str(max_extra_units) + " or less")))
+                        extra_units = int(no_letters_check(input("Please enter " + str(max_extra_units) + " or less")))
                         if extra_units <= 0:
                             return
 
