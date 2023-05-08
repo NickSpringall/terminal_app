@@ -22,12 +22,12 @@ def total_shipping_weight(file_name):
                 for x in item:
                     if x.tag == "quantity":
                         quantity = x.text
+
                         prod_quant = int(quantity)
 
                         total_weight = total_weight + (prod_weight_int * prod_quant)
     print (total_weight)
     return total_weight
-
 
 # Calculates standard and express shipping cost and prompts user to chose between them
 def shipping(package_weight):

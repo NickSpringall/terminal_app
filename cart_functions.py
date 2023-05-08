@@ -15,8 +15,8 @@ def add_to_cart():
     while is_selection_on_database(selection) == None:
         selection = input("Sorry, that is not on the list. \nPlease type the name of a product from the product list you would like to order:  ")
 
-    quantity = no_letters_check(input("how many would you like to order?:  "))
-    quantity = int(quantity)
+    quantity = int(no_letters_check(input("how many would you like to order?:  ")))
+    # quantity = int(quantity)
     if quantity <= 0:
         print("quantity must be more than 0 to add to cart!")
         return
@@ -112,9 +112,16 @@ def add_to_cart():
             if current_stock <= requested_stock:
                 print ("You already have " + str(already_in_cart) + " units of " + str(selection) + " in your cart and there are only " + str(current_stock) + " in stock")
                 max_extra_units = current_stock - already_in_cart
-                decision = input ("would you still like to purchase extra " + selection + " ?\n Type 'yes' to update your quantity or 'no' to return to search  ")
+                decision = yes_no_check(input("would you still like to purchase extra " + selection + " ?\n Type 'yes' to update your quantity or 'no' to return to search  "))
                 if decision == "yes":
-                    extra_units = int(input("how many extra units would you like to purchase? (up to " + str(max_extra_units) + "):  "))
+                    extra_units = no_letters_check(int(input("how many extra units would you like to purchase? (up to " + str(max_extra_units) + "):  ")))
+                    if extra_units <= 0:
+                        return
+                    while extra_units > max_extra_units:
+                        extra_units = no_letters_check(int(input("Please enter " + str(max_extra_units) + " or less")))
+                        if extra_units <= 0:
+                            return
+
                     final_cart_units = (extra_units + already_in_cart)
                     selection_to_cart ["quantity"] = final_cart_units
                     for x in items:
