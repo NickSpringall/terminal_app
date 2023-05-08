@@ -29,6 +29,7 @@ def disp_category():
                 continue
     return (prod_num_list)
 
+
 def disp_keyword():
     prod_num_list = []
     user_keyword = input("Please type in a keyword to search:\n")
@@ -74,5 +75,4 @@ def prod_search(list):
             prod_num_list = disp_full()
             config.x = prod_num_list
 
-    print(prod_num_list)
     return (prod_num_list)

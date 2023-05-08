@@ -7,6 +7,7 @@ from order_summary_functions import order_summary
 from returning_user_check import returning_user_check
 import config
 
+
 print("Welcome to the shop! Follow instructions to navigate through the catalogue and cart functions")
 
 returning_user_check()
