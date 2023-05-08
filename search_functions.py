@@ -7,6 +7,7 @@ from exception_functions import response_on_list_check
 import config
 
 
+# Finds all categories in the product database, promts user to chose between them and returns list if relevent product numbers
 def disp_category():
     prod_num_list = []
     cat_list = []
@@ -30,6 +31,7 @@ def disp_category():
     return (prod_num_list)
 
 
+# Promts user to type keyword and searches database for relevent products. Gives user option to return to search if no products are found
 def disp_keyword():
     prod_num_list = []
     user_keyword = input("Please type in a keyword to search:\n")
@@ -46,6 +48,7 @@ def disp_keyword():
     return (prod_num_list) 
 
 
+# Returns entire list of product numbers on product database
 def disp_full():
     prod_num_list = []
     for item in root:
@@ -53,7 +56,7 @@ def disp_full():
 
     return (prod_num_list)
 
-
+# Initial search prompt, returns list of product item numbers relevent to the selection
 def prod_search(list):
     if list != []:
         return (list)

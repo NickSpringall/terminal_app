@@ -6,7 +6,7 @@ import config
 from tools import remove_letters_to_float, get_address
 from exception_functions import yes_no_check
 
-
+# Checks if cart already has user data and if so prompts the user if they are correct, if not they are removed
 def user_details_already_in_cart():
     tree_cart = ET.parse(config.z)
     root_cart = tree_cart.getroot()
@@ -35,6 +35,7 @@ def user_details_already_in_cart():
             tree_cart.write(config.z)
             return False
 
+
 def checkout():
     try:
         if user_details_already_in_cart() == False:
@@ -50,13 +51,13 @@ def checkout():
             for i in ('user_first_name', 'user_surname', 'user_phone_no', 'user_address', 'order_date'):
                 customerdict[i] = locals()[i]
             
-            # update new filename to config.y
+# update new config.y to new file name
             config.y = user_first_name.lower() + ("_") + user_surname.lower() + (".xml")
     
             tree_cart = ET.parse(config.z)
             root_cart = tree_cart.getroot()
 
-    # write customer info to file
+# write customer info to cart file
             if bool(root_cart.findall("customer", namespaces = None)) == True:
                 next
             else: 
@@ -80,11 +81,13 @@ def checkout():
         else:
             config.y = config.z
 
+# If user has not inputted any products there will be no cart created, try except block catches error and ends program
     except FileNotFoundError:
         print ("You went to checkout with nothing in your cart! ----- Exiting the shop, see you again soon")
         exit()
 
 
+# calculates sub total of all products in the cart, prints for user and returns the value
 def sub_total(file_name):
     tree_cart = ET.parse(file_name)
     root_cart = tree_cart.getroot()

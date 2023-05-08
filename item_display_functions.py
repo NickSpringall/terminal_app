@@ -7,6 +7,7 @@ from tools import remove_letters_to_float
 tree = ET.parse('product_database.xml')
 list_root = tree.getroot()
 
+
 # appends searched items to be displayed from product database to a list of dictionaries
 def product_disp(list):
     ls_items_dict = []
@@ -26,6 +27,7 @@ def product_disp(list):
     return ls_items_dict
 
 
+# Removes letters and returns an ordered list based on the chosen key in a list
 def int_order(list, category_key, order):
     for x in list:
         cat = remove_letters_to_float (x[category_key])
@@ -38,6 +40,7 @@ def add_back_dollar_sign(list):
         x['price'] = "$" + str(x['price'])
 
 
+# Prints sorted list of items returned in the search
 def sort_display_order(list):
     while True:
         try:

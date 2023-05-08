@@ -14,7 +14,7 @@ def add_to_cart():
 
     while is_selection_on_database(selection) == None:
         selection = input("Sorry, that is not on the list. \nPlease type the name of a product from the product list you would like to order:  ")
-    
+
     quantity = no_letters_check(input("how many would you like to order?:  "))
     quantity = int(quantity)
     if quantity <= 0:
@@ -46,7 +46,7 @@ def add_to_cart():
                 except:
                     print("apologies, something went wrong")
 
-    # create shopping user_cart.xml file if it doesn't exist
+# checks for file and create shopping user_cart.xml file if it doesn't already exist
     if file_check(config.z) is False:
         root = minidom.Document()
         xml = root.createElement(config.z)
@@ -68,7 +68,7 @@ def add_to_cart():
         "weight": ""
         }
     
-# adding product details to dictionary from product_database.xml
+# adding product details to dictionary variable from product_database.xml
     for item in list_root:
             if item[0].text.lower() == selection.lower():
                 for sub in item:
@@ -85,11 +85,11 @@ def add_to_cart():
                             selection_to_cart["weight"] = sub.text
 
     
-    # parse user cart
+
     tree_cart = ET.parse(config.z)
     root_cart = tree_cart.getroot()
 
-    # check if the items sub tag exists in user_cart.xml and create one if not
+# check if the 'items' sub tag exists in user_cart.xml and create one if not
     if bool(root_cart.findall("items", namespaces = None)) == True:
         next
     else:
@@ -146,6 +146,7 @@ def add_to_cart():
     tree_cart.write(config.z)
 
 
+# Prompt to search again or go to checkout, returns 2 statements, 'none or 'restart' to prompt main loop and the product number list if user requests to see searched for items again
 def search_restart():
     next_step = yes_no_check(input("would you like to add another product?:  "))
     options = ("options", "previous list")

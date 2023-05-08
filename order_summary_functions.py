@@ -5,6 +5,8 @@ import os
 from tools import update_product_list, remove_letters_to_float, get_address
 from exception_functions import response_on_list_check
 
+
+# Prints cart information and prompt the user to either save the cart or proceed with purchase
 def order_summary(sub, ship, file_name):
     tree_cart = ET.parse(file_name)
     root_cart = tree_cart.getroot()
@@ -22,6 +24,8 @@ def order_summary(sub, ship, file_name):
 
     list = ("proceed", "save")
     proceed = response_on_list_check(input("Would you like to proceed with order of save cart for later? \n Please type 'proceed' or 'save':  "), list)
+
+# If user proceeds with order, database is updated to reflect the new remaining stock levels
     if proceed == "proceed":
         update_product_list(name, quantity)
         file_name = str(get_address()) + "/" + config.y

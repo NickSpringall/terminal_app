@@ -5,6 +5,7 @@ from tools import remove_letters_to_float
 
 import xml.etree.ElementTree as ET
 
+# calculates weight of all items in cart
 def total_shipping_weight(file_name):
         
     tree_cart = ET.parse(file_name)
@@ -28,6 +29,7 @@ def total_shipping_weight(file_name):
     return total_weight
 
 
+# Calculates standard and express shipping cost and prompts user to chose between them
 def shipping(package_weight):
     ship_price = ""
     standard_ship_per_kg = 3
@@ -55,5 +57,6 @@ def shipping(package_weight):
         "weight": ""
     }
 
+# Writes postage information to cart as another product
     write_prod_to_cart(config.y, postage)
     return ship_price
